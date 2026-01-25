@@ -1,0 +1,703 @@
+--- CAESAR V12.10: NUCLEATION JUMPSTART ---
+Ep    0 | M 0.9975 | Scar 0.0000 | SR 1.00 | Rad 1.00 | Lvl 0
+  >>> NUCLEATION SUCCESS: Level 1 <<<
+Ep   20 | M 0.4887 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep   40 | M 0.5054 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep   60 | M 0.5021 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep   80 | M 0.4570 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  100 | M 0.4714 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  120 | M 0.4740 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep  140 | M 0.5327 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep  160 | M 0.4864 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep  180 | M 0.4868 | Scar 0.0000 | SR 0.60 | Rad 0.95 | Lvl 1
+Ep  200 | M 0.6219 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep  220 | M 0.4860 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  240 | M 0.4940 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  260 | M 0.4773 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  280 | M 0.5052 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  300 | M 0.4624 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep  320 | M 0.4512 | Scar 0.0000 | SR 0.50 | Rad 0.95 | Lvl 1
+Ep  340 | M 0.4633 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  360 | M 0.4391 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  380 | M 0.4658 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep  400 | M 0.4562 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep  420 | M 0.4719 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  440 | M 0.4491 | Scar 0.0000 | SR 0.36 | Rad 0.95 | Lvl 1
+Ep  460 | M 0.4479 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  480 | M 0.4895 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  500 | M 0.4109 | Scar 0.0000 | SR 0.38 | Rad 0.95 | Lvl 1
+Ep  520 | M 0.3651 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  540 | M 0.3756 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  560 | M 0.3627 | Scar 0.0000 | SR 0.38 | Rad 0.95 | Lvl 1
+Ep  580 | M 0.5057 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  600 | M 0.4102 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  620 | M 0.3721 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  640 | M 0.3667 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  660 | M 0.3886 | Scar 0.0000 | SR 0.48 | Rad 0.95 | Lvl 1
+Ep  680 | M 0.4825 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  700 | M 0.3959 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep  720 | M 0.5701 | Scar 0.0000 | SR 0.48 | Rad 0.95 | Lvl 1
+Ep  740 | M 0.6094 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  760 | M 0.4105 | Scar 0.0000 | SR 0.38 | Rad 0.95 | Lvl 1
+Ep  780 | M 0.4166 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  800 | M 0.4854 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep  820 | M 0.4299 | Scar 0.0000 | SR 0.60 | Rad 0.95 | Lvl 1
+Ep  840 | M 0.6439 | Scar 0.0000 | SR 0.50 | Rad 0.95 | Lvl 1
+Ep  860 | M 0.4060 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  880 | M 0.4192 | Scar 0.0000 | SR 0.48 | Rad 0.95 | Lvl 1
+Ep  900 | M 0.3872 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  920 | M 0.3738 | Scar 0.0000 | SR 0.38 | Rad 0.95 | Lvl 1
+Ep  940 | M 0.4488 | Scar 0.0000 | SR 0.48 | Rad 0.95 | Lvl 1
+Ep  960 | M 0.3716 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  980 | M 0.3578 | Scar 0.0000 | SR 0.50 | Rad 0.95 | Lvl 1
+Ep 1000 | M 0.3419 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep 1020 | M 0.3311 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep 1040 | M 0.3180 | Scar 0.0000 | SR 0.58 | Rad 0.95 | Lvl 1
+Ep 1060 | M 0.3370 | Scar 0.0000 | SR 0.50 | Rad 0.95 | Lvl 1
+Ep 1080 | M 0.4446 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep 1100 | M 0.6129 | Scar 0.0000 | SR 0.64 | Rad 0.95 | Lvl 1
+Ep 1120 | M 0.3385 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep 1140 | M 0.3601 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep 1160 | M 0.5258 | Scar 0.0000 | SR 0.56 | Rad 0.95 | Lvl 1
+Ep 1180 | M 0.3898 | Scar 0.0000 | SR 0.68 | Rad 0.95 | Lvl 1
+Ep 1200 | M 0.4181 | Scar 0.0000 | SR 0.70 | Rad 0.95 | Lvl 1
+  >>> NUCLEATION SUCCESS: Level 2 <<<
+Ep 1220 | M 0.3105 | Scar 0.0000 | SR 0.55 | Rad 0.90 | Lvl 2
+Ep 1240 | M 0.3895 | Scar 0.0000 | SR 0.65 | Rad 0.90 | Lvl 2
+Ep 1260 | M 0.3515 | Scar 0.0000 | SR 0.62 | Rad 0.90 | Lvl 2
+Ep 1280 | M 0.3954 | Scar 0.0000 | SR 0.68 | Rad 0.90 | Lvl 2
+Ep 1300 | M 0.5402 | Scar 0.0000 | SR 0.70 | Rad 0.90 | Lvl 2
+  >>> NUCLEATION SUCCESS: Level 3 <<<
+Ep 1320 | M 0.3080 | Scar 0.0000 | SR 0.35 | Rad 0.85 | Lvl 3
+Ep 1340 | M 0.3026 | Scar 0.0000 | SR 0.38 | Rad 0.85 | Lvl 3
+Ep 1360 | M 0.3313 | Scar 0.0000 | SR 0.34 | Rad 0.85 | Lvl 3
+Ep 1380 | M 0.3870 | Scar 0.0000 | SR 0.50 | Rad 0.85 | Lvl 3
+Ep 1400 | M 0.3330 | Scar 0.0000 | SR 0.54 | Rad 0.85 | Lvl 3
+Ep 1420 | M 0.3566 | Scar 0.0000 | SR 0.42 | Rad 0.85 | Lvl 3
+Ep 1440 | M 0.3905 | Scar 0.0000 | SR 0.18 | Rad 0.85 | Lvl 3
+Ep 1460 | M 0.3703 | Scar 0.0000 | SR 0.30 | Rad 0.85 | Lvl 3
+Ep 1480 | M 0.3329 | Scar 0.0000 | SR 0.46 | Rad 0.85 | Lvl 3
+Ep 1500 | M 0.2746 | Scar 0.0000 | SR 0.46 | Rad 0.85 | Lvl 3
+Ep 1520 | M 0.2681 | Scar 0.0000 | SR 0.30 | Rad 0.85 | Lvl 3
+Ep 1540 | M 0.3114 | Scar 0.0000 | SR 0.28 | Rad 0.85 | Lvl 3
+Ep 1560 | M 0.2572 | Scar 0.0000 | SR 0.28 | Rad 0.85 | Lvl 3
+Ep 1580 | M 0.2673 | Scar 0.0000 | SR 0.32 | Rad 0.85 | Lvl 3
+Ep 1600 | M 0.4376 | Scar 0.0000 | SR 0.54 | Rad 0.85 | Lvl 3
+Ep 1620 | M 0.2828 | Scar 0.0000 | SR 0.68 | Rad 0.85 | Lvl 3
+Ep 1640 | M 0.6593 | Scar 0.0000 | SR 0.74 | Rad 0.85 | Lvl 3
+  >>> NUCLEATION SUCCESS: Level 4 <<<
+Ep 1660 | M 0.2370 | Scar 0.0000 | SR 0.35 | Rad 0.80 | Lvl 4
+Ep 1680 | M 0.4148 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 1700 | M 0.2376 | Scar 0.0000 | SR 0.34 | Rad 0.80 | Lvl 4
+Ep 1720 | M 0.2785 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 1740 | M 0.2409 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 1760 | M 0.2415 | Scar 0.0000 | SR 0.58 | Rad 0.80 | Lvl 4
+Ep 1780 | M 0.2456 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1800 | M 0.4797 | Scar 0.0000 | SR 0.56 | Rad 0.80 | Lvl 4
+Ep 1820 | M 0.2862 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 1840 | M 0.2397 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1860 | M 0.2774 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1880 | M 0.4329 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1900 | M 0.3418 | Scar 0.0000 | SR 0.70 | Rad 0.80 | Lvl 4
+  >>> NUCLEATION SUCCESS: Level 5 <<<
+Ep 1920 | M 0.4798 | Scar 0.0000 | SR 0.70 | Rad 0.75 | Lvl 5
+  >>> NUCLEATION SUCCESS: Level 6 <<<
+Ep 1940 | M 0.2122 | Scar 0.0000 | SR 0.65 | Rad 0.70 | Lvl 6
+Ep 1960 | M 0.5900 | Scar 0.0000 | SR 0.53 | Rad 0.70 | Lvl 6
+Ep 1980 | M 0.6146 | Scar 0.0000 | SR 0.52 | Rad 0.70 | Lvl 6
+Ep 2000 | M 0.5890 | Scar 0.0000 | SR 0.48 | Rad 0.70 | Lvl 6
+Ep 2020 | M 0.6024 | Scar 0.0000 | SR 0.64 | Rad 0.70 | Lvl 6
+Ep 2040 | M 0.5925 | Scar 0.0000 | SR 0.52 | Rad 0.70 | Lvl 6
+Ep 2060 | M 0.6558 | Scar 0.0000 | SR 0.62 | Rad 0.70 | Lvl 6
+Ep 2080 | M 0.5810 | Scar 0.0000 | SR 0.68 | Rad 0.70 | Lvl 6
+Ep 2100 | M 0.5910 | Scar 0.0000 | SR 0.74 | Rad 0.70 | Lvl 6
+  >>> NUCLEATION SUCCESS: Level 7 <<<
+Ep 2120 | M 0.6347 | Scar 0.0000 | SR 0.65 | Rad 0.65 | Lvl 7
+Ep 2140 | M 0.6082 | Scar 0.0000 | SR 0.60 | Rad 0.65 | Lvl 7
+Ep 2160 | M 0.5917 | Scar 0.0000 | SR 0.60 | Rad 0.65 | Lvl 7
+Ep 2180 | M 0.1614 | Scar 0.0000 | SR 0.46 | Rad 0.65 | Lvl 7
+Ep 2200 | M 0.1562 | Scar 0.0000 | SR 0.48 | Rad 0.65 | Lvl 7
+Ep 2220 | M 0.4025 | Scar 0.0000 | SR 0.60 | Rad 0.65 | Lvl 7
+Ep 2240 | M 0.2218 | Scar 0.0000 | SR 0.66 | Rad 0.65 | Lvl 7
+Ep 2260 | M 0.5681 | Scar 0.0000 | SR 0.66 | Rad 0.65 | Lvl 7
+Ep 2280 | M 0.5803 | Scar 0.0000 | SR 0.54 | Rad 0.65 | Lvl 7
+Ep 2300 | M 0.5910 | Scar 0.0000 | SR 0.46 | Rad 0.65 | Lvl 7
+Ep 2320 | M 0.6249 | Scar 0.0000 | SR 0.52 | Rad 0.65 | Lvl 7
+Ep 2340 | M 0.6040 | Scar 0.0000 | SR 0.50 | Rad 0.65 | Lvl 7
+Ep 2360 | M 0.6815 | Scar 0.0000 | SR 0.58 | Rad 0.65 | Lvl 7
+Ep 2380 | M 0.6799 | Scar 0.0000 | SR 0.80 | Rad 0.65 | Lvl 7
+  >>> NUCLEATION SUCCESS: Level 8 <<<
+Ep 2400 | M 0.6788 | Scar 0.0000 | SR 1.00 | Rad 0.60 | Lvl 8
+  >>> NUCLEATION SUCCESS: Level 9 <<<
+Ep 2420 | M 0.5775 | Scar 0.0000 | SR 0.75 | Rad 0.55 | Lvl 9
+  >>> NUCLEATION SUCCESS: Level 10 <<<
+Ep 2440 | M 0.5765 | Scar 0.0000 | SR 0.35 | Rad 0.50 | Lvl 10
+Ep 2460 | M 0.5864 | Scar 0.0000 | SR 0.42 | Rad 0.50 | Lvl 10
+Ep 2480 | M 0.6820 | Scar 0.0000 | SR 0.62 | Rad 0.50 | Lvl 10
+  >>> NUCLEATION SUCCESS: Level 11 <<<
+Ep 2500 | M 0.6855 | Scar 0.0000 | SR 1.00 | Rad 0.45 | Lvl 11
+  >>> NUCLEATION SUCCESS: Level 12 <<<
+Ep 2520 | M 0.5749 | Scar 0.0000 | SR 0.55 | Rad 0.40 | Lvl 12
+Ep 2540 | M 0.6716 | Scar 0.0000 | SR 0.65 | Rad 0.40 | Lvl 12
+  >>> NUCLEATION SUCCESS: Level 13 <<<
+Ep 2560 | M 0.6400 | Scar 0.0000 | SR 0.75 | Rad 0.40 | Lvl 13
+  >>> NUCLEATION SUCCESS: Level 14 <<<
+Ep 2580 | M 0.6735 | Scar 0.0000 | SR 0.90 | Rad 0.40 | Lvl 14
+  >>> NUCLEATION SUCCESS: Level 15 <<<
+Ep 2600 | M 0.6829 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 15
+  >>> NUCLEATION SUCCESS: Level 16 <<<
+Ep 2620 | M 0.6788 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 16
+  >>> NUCLEATION SUCCESS: Level 17 <<<
+Ep 2640 | M 0.6049 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 17
+  >>> NUCLEATION SUCCESS: Level 18 <<<
+Ep 2660 | M 0.5696 | Scar 0.0000 | SR 0.15 | Rad 0.40 | Lvl 18
+Ep 2680 | M 0.6703 | Scar 0.0000 | SR 0.47 | Rad 0.40 | Lvl 18
+Ep 2700 | M 0.6797 | Scar 0.0000 | SR 0.76 | Rad 0.40 | Lvl 18
+  >>> NUCLEATION SUCCESS: Level 19 <<<
+Ep 2720 | M 0.6864 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 19
+  >>> NUCLEATION SUCCESS: Level 20 <<<
+Ep 2740 | M 0.6804 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 20
+  >>> NUCLEATION SUCCESS: Level 21 <<<
+Ep 2760 | M 0.6051 | Scar 0.0000 | SR 0.75 | Rad 0.40 | Lvl 21
+  >>> NUCLEATION SUCCESS: Level 22 <<<
+Ep 2780 | M 0.6291 | Scar 0.0000 | SR 0.65 | Rad 0.40 | Lvl 22
+  >>> NUCLEATION SUCCESS: Level 23 <<<
+Ep 2800 | M 0.5578 | Scar 0.0000 | SR 0.45 | Rad 0.40 | Lvl 23
+Ep 2820 | M 0.6357 | Scar 0.0000 | SR 0.53 | Rad 0.40 | Lvl 23
+Ep 2840 | M 0.5467 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 23
+Ep 2860 | M 0.5484 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 23
+Ep 2880 | M 0.5539 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 23
+Ep 2900 | M 0.1245 | Scar 0.0000 | SR 0.52 | Rad 0.40 | Lvl 23
+Ep 2920 | M 0.1267 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 23
+Ep 2940 | M 0.2671 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 23
+Ep 2960 | M 0.1575 | Scar 0.0000 | SR 0.64 | Rad 0.40 | Lvl 23
+Ep 2980 | M 0.4753 | Scar 0.0000 | SR 0.72 | Rad 0.40 | Lvl 23
+  >>> NUCLEATION SUCCESS: Level 24 <<<
+Ep 3000 | M 0.1323 | Scar 0.0000 | SR 0.75 | Rad 0.40 | Lvl 24
+Ep 3020 | M 0.1286 | Scar 0.0000 | SR 0.57 | Rad 0.40 | Lvl 24
+Ep 3040 | M 0.2351 | Scar 0.0000 | SR 0.62 | Rad 0.40 | Lvl 24
+  >>> NUCLEATION SUCCESS: Level 25 <<<
+Ep 3060 | M 0.6130 | Scar 0.0000 | SR 0.55 | Rad 0.40 | Lvl 25
+Ep 3080 | M 0.1182 | Scar 0.0000 | SR 0.30 | Rad 0.40 | Lvl 25
+Ep 3100 | M 0.2090 | Scar 0.0005 | SR 0.24 | Rad 0.40 | Lvl 25
+Ep 3120 | M 0.2067 | Scar 0.0012 | SR 0.24 | Rad 0.40 | Lvl 25
+Ep 3140 | M 0.1487 | Scar 0.0012 | SR 0.22 | Rad 0.40 | Lvl 25
+Ep 3160 | M 0.1045 | Scar 0.0020 | SR 0.24 | Rad 0.40 | Lvl 25
+Ep 3180 | M 0.1046 | Scar 0.0033 | SR 0.22 | Rad 0.40 | Lvl 25
+Ep 3200 | M 0.1386 | Scar 0.0042 | SR 0.22 | Rad 0.40 | Lvl 25
+Ep 3220 | M 0.1144 | Scar 0.0051 | SR 0.30 | Rad 0.40 | Lvl 25
+Ep 3240 | M 0.2025 | Scar 0.0051 | SR 0.44 | Rad 0.40 | Lvl 25
+Ep 3260 | M 0.3495 | Scar 0.0051 | SR 0.58 | Rad 0.40 | Lvl 25
+Ep 3280 | M 0.3187 | Scar 0.0051 | SR 0.60 | Rad 0.40 | Lvl 25
+  >>> NUCLEATION SUCCESS: Level 26 <<<
+Ep 3300 | M 0.4188 | Scar 0.0051 | SR 0.35 | Rad 0.40 | Lvl 26
+Ep 3320 | M 0.5488 | Scar 0.0051 | SR 0.42 | Rad 0.40 | Lvl 26
+Ep 3340 | M 0.6572 | Scar 0.0051 | SR 0.64 | Rad 0.40 | Lvl 26
+  >>> NUCLEATION SUCCESS: Level 27 <<
+
+--- CAESAR V12.10: NUCLEATION JUMPSTART ---
+Ep    0 | M 0.9243 | Scar 0.0000 | SR 1.00 | Rad 1.00 | Lvl 0
+  >>> NUCLEATION SUCCESS: Level 1 <<<
+Ep   20 | M 0.5233 | Scar 0.0000 | SR 0.55 | Rad 0.95 | Lvl 1
+Ep   40 | M 0.5270 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep   60 | M 0.4797 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep   80 | M 0.4956 | Scar 0.0000 | SR 0.36 | Rad 0.95 | Lvl 1
+Ep  100 | M 0.4303 | Scar 0.0000 | SR 0.36 | Rad 0.95 | Lvl 1
+Ep  120 | M 0.4977 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  140 | M 0.4783 | Scar 0.0000 | SR 0.42 | Rad 0.95 | Lvl 1
+Ep  160 | M 0.5070 | Scar 0.0000 | SR 0.38 | Rad 0.95 | Lvl 1
+Ep  180 | M 0.5193 | Scar 0.0000 | SR 0.40 | Rad 0.95 | Lvl 1
+Ep  200 | M 0.5377 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep  220 | M 0.5042 | Scar 0.0000 | SR 0.54 | Rad 0.95 | Lvl 1
+Ep  240 | M 0.5022 | Scar 0.0000 | SR 0.58 | Rad 0.95 | Lvl 1
+Ep  260 | M 0.4953 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep  280 | M 0.4820 | Scar 0.0000 | SR 0.50 | Rad 0.95 | Lvl 1
+Ep  300 | M 0.4756 | Scar 0.0000 | SR 0.52 | Rad 0.95 | Lvl 1
+Ep  320 | M 0.5012 | Scar 0.0000 | SR 0.46 | Rad 0.95 | Lvl 1
+Ep  340 | M 0.6263 | Scar 0.0000 | SR 0.44 | Rad 0.95 | Lvl 1
+Ep  360 | M 0.5803 | Scar 0.0000 | SR 0.60 | Rad 0.95 | Lvl 1
+Ep  380 | M 0.4685 | Scar 0.0000 | SR 0.68 | Rad 0.95 | Lvl 1
+Ep  400 | M 0.4764 | Scar 0.0000 | SR 0.60 | Rad 0.95 | Lvl 1
+Ep  420 | M 0.5581 | Scar 0.0000 | SR 0.60 | Rad 0.95 | Lvl 1
+Ep  440 | M 0.5258 | Scar 0.0000 | SR 0.70 | Rad 0.95 | Lvl 1
+  >>> NUCLEATION SUCCESS: Level 2 <<<
+Ep  460 | M 0.5718 | Scar 0.0000 | SR 0.65 | Rad 0.90 | Lvl 2
+Ep  480 | M 0.3993 | Scar 0.0000 | SR 0.62 | Rad 0.90 | Lvl 2
+Ep  500 | M 0.4023 | Scar 0.0000 | SR 0.60 | Rad 0.90 | Lvl 2
+Ep  520 | M 0.5023 | Scar 0.0000 | SR 0.50 | Rad 0.90 | Lvl 2
+Ep  540 | M 0.5565 | Scar 0.0000 | SR 0.46 | Rad 0.90 | Lvl 2
+Ep  560 | M 0.5525 | Scar 0.0000 | SR 0.44 | Rad 0.90 | Lvl 2
+Ep  580 | M 0.5899 | Scar 0.0000 | SR 0.36 | Rad 0.90 | Lvl 2
+Ep  600 | M 0.6987 | Scar 0.0000 | SR 0.52 | Rad 0.90 | Lvl 2
+Ep  620 | M 0.5742 | Scar 0.0000 | SR 0.58 | Rad 0.90 | Lvl 2
+Ep  640 | M 0.5977 | Scar 0.0000 | SR 0.52 | Rad 0.90 | Lvl 2
+Ep  660 | M 0.6037 | Scar 0.0000 | SR 0.48 | Rad 0.90 | Lvl 2
+Ep  680 | M 0.5817 | Scar 0.0000 | SR 0.54 | Rad 0.90 | Lvl 2
+Ep  700 | M 0.5729 | Scar 0.0000 | SR 0.62 | Rad 0.90 | Lvl 2
+Ep  720 | M 0.5820 | Scar 0.0000 | SR 0.56 | Rad 0.90 | Lvl 2
+Ep  740 | M 0.4987 | Scar 0.0000 | SR 0.44 | Rad 0.90 | Lvl 2
+Ep  760 | M 0.5569 | Scar 0.0000 | SR 0.48 | Rad 0.90 | Lvl 2
+Ep  780 | M 0.4754 | Scar 0.0000 | SR 0.48 | Rad 0.90 | Lvl 2
+Ep  800 | M 0.4851 | Scar 0.0000 | SR 0.44 | Rad 0.90 | Lvl 2
+Ep  820 | M 0.4668 | Scar 0.0000 | SR 0.48 | Rad 0.90 | Lvl 2
+Ep  840 | M 0.4718 | Scar 0.0000 | SR 0.54 | Rad 0.90 | Lvl 2
+Ep  860 | M 0.4861 | Scar 0.0000 | SR 0.54 | Rad 0.90 | Lvl 2
+Ep  880 | M 0.6782 | Scar 0.0000 | SR 0.56 | Rad 0.90 | Lvl 2
+Ep  900 | M 0.4871 | Scar 0.0000 | SR 0.50 | Rad 0.90 | Lvl 2
+Ep  920 | M 0.7098 | Scar 0.0000 | SR 0.66 | Rad 0.90 | Lvl 2
+Ep  940 | M 0.5397 | Scar 0.0000 | SR 0.66 | Rad 0.90 | Lvl 2
+Ep  960 | M 0.5166 | Scar 0.0000 | SR 0.54 | Rad 0.90 | Lvl 2
+Ep  980 | M 0.6605 | Scar 0.0000 | SR 0.46 | Rad 0.90 | Lvl 2
+Ep 1000 | M 0.6203 | Scar 0.0000 | SR 0.44 | Rad 0.90 | Lvl 2
+Ep 1020 | M 0.6232 | Scar 0.0000 | SR 0.48 | Rad 0.90 | Lvl 2
+Ep 1040 | M 0.4822 | Scar 0.0000 | SR 0.52 | Rad 0.90 | Lvl 2
+Ep 1060 | M 0.4832 | Scar 0.0000 | SR 0.56 | Rad 0.90 | Lvl 2
+Ep 1080 | M 0.4166 | Scar 0.0000 | SR 0.52 | Rad 0.90 | Lvl 2
+Ep 1100 | M 0.4339 | Scar 0.0000 | SR 0.64 | Rad 0.90 | Lvl 2
+Ep 1120 | M 0.5751 | Scar 0.0000 | SR 0.68 | Rad 0.90 | Lvl 2
+Ep 1140 | M 0.5169 | Scar 0.0000 | SR 0.66 | Rad 0.90 | Lvl 2
+Ep 1160 | M 0.6251 | Scar 0.0000 | SR 0.64 | Rad 0.90 | Lvl 2
+Ep 1180 | M 0.6452 | Scar 0.0000 | SR 0.66 | Rad 0.90 | Lvl 2
+Ep 1200 | M 0.6068 | Scar 0.0000 | SR 0.62 | Rad 0.90 | Lvl 2
+Ep 1220 | M 0.4184 | Scar 0.0000 | SR 0.46 | Rad 0.90 | Lvl 2
+Ep 1240 | M 0.3339 | Scar 0.0000 | SR 0.38 | Rad 0.90 | Lvl 2
+Ep 1260 | M 0.3337 | Scar 0.0000 | SR 0.32 | Rad 0.90 | Lvl 2
+Ep 1280 | M 0.3783 | Scar 0.0000 | SR 0.42 | Rad 0.90 | Lvl 2
+Ep 1300 | M 0.4339 | Scar 0.0000 | SR 0.56 | Rad 0.90 | Lvl 2
+Ep 1320 | M 0.6859 | Scar 0.0000 | SR 0.78 | Rad 0.90 | Lvl 2
+  >>> NUCLEATION SUCCESS: Level 3 <<<
+Ep 1340 | M 0.6107 | Scar 0.0000 | SR 0.35 | Rad 0.85 | Lvl 3
+Ep 1360 | M 0.6600 | Scar 0.0000 | SR 0.60 | Rad 0.85 | Lvl 3
+Ep 1380 | M 0.6035 | Scar 0.0000 | SR 0.64 | Rad 0.85 | Lvl 3
+Ep 1400 | M 0.6164 | Scar 0.0000 | SR 0.70 | Rad 0.85 | Lvl 3
+  >>> NUCLEATION SUCCESS: Level 4 <<<
+Ep 1420 | M 0.6368 | Scar 0.0000 | SR 0.65 | Rad 0.80 | Lvl 4
+Ep 1440 | M 0.3629 | Scar 0.0000 | SR 0.62 | Rad 0.80 | Lvl 4
+Ep 1460 | M 0.3263 | Scar 0.0000 | SR 0.56 | Rad 0.80 | Lvl 4
+Ep 1480 | M 0.3381 | Scar 0.0000 | SR 0.50 | Rad 0.80 | Lvl 4
+Ep 1500 | M 0.3575 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 1520 | M 0.4806 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 1540 | M 0.5294 | Scar 0.0000 | SR 0.52 | Rad 0.80 | Lvl 4
+Ep 1560 | M 0.3672 | Scar 0.0000 | SR 0.64 | Rad 0.80 | Lvl 4
+Ep 1580 | M 0.3514 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1600 | M 0.3542 | Scar 0.0000 | SR 0.44 | Rad 0.80 | Lvl 4
+Ep 1620 | M 0.3455 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 1640 | M 0.4376 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 1660 | M 0.3002 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 1680 | M 0.5178 | Scar 0.0000 | SR 0.68 | Rad 0.80 | Lvl 4
+Ep 1700 | M 0.3506 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1720 | M 0.3621 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 1740 | M 0.3459 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 1760 | M 0.3567 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 1780 | M 0.4402 | Scar 0.0000 | SR 0.34 | Rad 0.80 | Lvl 4
+Ep 1800 | M 0.3578 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 1820 | M 0.3331 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 1840 | M 0.3113 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 1860 | M 0.4121 | Scar 0.0000 | SR 0.62 | Rad 0.80 | Lvl 4
+Ep 1880 | M 0.5191 | Scar 0.0000 | SR 0.60 | Rad 0.80 | Lvl 4
+Ep 1900 | M 0.4173 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 1920 | M 0.3035 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 1940 | M 0.3313 | Scar 0.0000 | SR 0.34 | Rad 0.80 | Lvl 4
+Ep 1960 | M 0.3139 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 1980 | M 0.3118 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2000 | M 0.3931 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2020 | M 0.3092 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2040 | M 0.3613 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2060 | M 0.3352 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2080 | M 0.3480 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2100 | M 0.3391 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 2120 | M 0.3124 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2140 | M 0.4414 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 2160 | M 0.3192 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2180 | M 0.3046 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2200 | M 0.2954 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2220 | M 0.4558 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 2240 | M 0.3223 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 2260 | M 0.3109 | Scar 0.0000 | SR 0.52 | Rad 0.80 | Lvl 4
+Ep 2280 | M 0.5061 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 2300 | M 0.3486 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2320 | M 0.4201 | Scar 0.0000 | SR 0.56 | Rad 0.80 | Lvl 4
+Ep 2340 | M 0.3022 | Scar 0.0000 | SR 0.54 | Rad 0.80 | Lvl 4
+Ep 2360 | M 0.3295 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 2380 | M 0.3129 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 2400 | M 0.3162 | Scar 0.0000 | SR 0.34 | Rad 0.80 | Lvl 4
+Ep 2420 | M 0.4713 | Scar 0.0000 | SR 0.30 | Rad 0.80 | Lvl 4
+Ep 2440 | M 0.5281 | Scar 0.0000 | SR 0.34 | Rad 0.80 | Lvl 4
+Ep 2460 | M 0.3077 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2480 | M 0.3323 | Scar 0.0000 | SR 0.36 | Rad 0.80 | Lvl 4
+Ep 2500 | M 0.3725 | Scar 0.0000 | SR 0.44 | Rad 0.80 | Lvl 4
+Ep 2520 | M 0.2889 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2540 | M 0.2729 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2560 | M 0.3956 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2580 | M 0.2762 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2600 | M 0.2667 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2620 | M 0.2652 | Scar 0.0000 | SR 0.30 | Rad 0.80 | Lvl 4
+Ep 2640 | M 0.2634 | Scar 0.0000 | SR 0.28 | Rad 0.80 | Lvl 4
+Ep 2660 | M 0.2560 | Scar 0.0000 | SR 0.30 | Rad 0.80 | Lvl 4
+Ep 2680 | M 0.2488 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2700 | M 0.2583 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2720 | M 0.2717 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2740 | M 0.4258 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 2760 | M 0.3404 | Scar 0.0000 | SR 0.40 | Rad 0.80 | Lvl 4
+Ep 2780 | M 0.4577 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2800 | M 0.4558 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2820 | M 0.4573 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2840 | M 0.3362 | Scar 0.0000 | SR 0.38 | Rad 0.80 | Lvl 4
+Ep 2860 | M 0.4369 | Scar 0.0000 | SR 0.42 | Rad 0.80 | Lvl 4
+Ep 2880 | M 0.3403 | Scar 0.0000 | SR 0.52 | Rad 0.80 | Lvl 4
+Ep 2900 | M 0.3932 | Scar 0.0000 | SR 0.48 | Rad 0.80 | Lvl 4
+Ep 2920 | M 0.3446 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 2940 | M 0.3451 | Scar 0.0000 | SR 0.52 | Rad 0.80 | Lvl 4
+Ep 2960 | M 0.3485 | Scar 0.0000 | SR 0.50 | Rad 0.80 | Lvl 4
+Ep 2980 | M 0.3017 | Scar 0.0000 | SR 0.46 | Rad 0.80 | Lvl 4
+Ep 3000 | M 0.4863 | Scar 0.0000 | SR 0.56 | Rad 0.80 | Lvl 4
+Ep 3020 | M 0.6321 | Scar 0.0000 | SR 0.66 | Rad 0.80 | Lvl 4
+Ep 3040 | M 0.3449 | Scar 0.0000 | SR 0.70 | Rad 0.80 | Lvl 4
+  >>> NUCLEATION SUCCESS: Level 5 <<<
+Ep 3060 | M 0.2372 | Scar 0.0000 | SR 0.30 | Rad 0.75 | Lvl 5
+Ep 3080 | M 0.2580 | Scar 0.0000 | SR 0.28 | Rad 0.75 | Lvl 5
+Ep 3100 | M 0.2135 | Scar 0.0000 | SR 0.38 | Rad 0.75 | Lvl 5
+Ep 3120 | M 0.2160 | Scar 0.0000 | SR 0.48 | Rad 0.75 | Lvl 5
+Ep 3140 | M 0.2190 | Scar 0.0000 | SR 0.52 | Rad 0.75 | Lvl 5
+Ep 3160 | M 0.4643 | Scar 0.0000 | SR 0.54 | Rad 0.75 | Lvl 5
+Ep 3180 | M 0.6692 | Scar 0.0000 | SR 0.66 | Rad 0.75 | Lvl 5
+Ep 3200 | M 0.6167 | Scar 0.0000 | SR 0.64 | Rad 0.75 | Lvl 5
+Ep 3220 | M 0.2203 | Scar 0.0000 | SR 0.50 | Rad 0.75 | Lvl 5
+Ep 3240 | M 0.6224 | Scar 0.0000 | SR 0.54 | Rad 0.75 | Lvl 5
+Ep 3260 | M 0.2480 | Scar 0.0000 | SR 0.56 | Rad 0.75 | Lvl 5
+Ep 3280 | M 0.2105 | Scar 0.0000 | SR 0.52 | Rad 0.75 | Lvl 5
+Ep 3300 | M 0.2115 | Scar 0.0000 | SR 0.40 | Rad 0.75 | Lvl 5
+Ep 3320 | M 0.2370 | Scar 0.0000 | SR 0.60 | Rad 0.75 | Lvl 5
+Ep 3340 | M 0.2154 | Scar 0.0000 | SR 0.58 | Rad 0.75 | Lvl 5
+Ep 3360 | M 0.4082 | Scar 0.0000 | SR 0.60 | Rad 0.75 | Lvl 5
+Ep 3380 | M 0.2385 | Scar 0.0000 | SR 0.56 | Rad 0.75 | Lvl 5
+Ep 3400 | M 0.6211 | Scar 0.0000 | SR 0.66 | Rad 0.75 | Lvl 5
+Ep 3420 | M 0.5961 | Scar 0.0000 | SR 0.74 | Rad 0.75 | Lvl 5
+  >>> NUCLEATION SUCCESS: Level 6 <<<
+Ep 3440 | M 0.6353 | Scar 0.0000 | SR 0.60 | Rad 0.70 | Lvl 6
+Ep 3460 | M 0.6191 | Scar 0.0000 | SR 0.65 | Rad 0.70 | Lvl 6
+Ep 3480 | M 0.2409 | Scar 0.0000 | SR 0.50 | Rad 0.70 | Lvl 6
+Ep 3500 | M 0.2759 | Scar 0.0000 | SR 0.60 | Rad 0.70 | Lvl 6
+Ep 3520 | M 0.6118 | Scar 0.0000 | SR 0.60 | Rad 0.70 | Lvl 6
+Ep 3540 | M 0.6250 | Scar 0.0000 | SR 0.74 | Rad 0.70 | Lvl 6
+  >>> NUCLEATION SUCCESS: Level 7 <<<
+Ep 3560 | M 0.6671 | Scar 0.0000 | SR 0.70 | Rad 0.65 | Lvl 7
+  >>> NUCLEATION SUCCESS: Level 8 <<<
+Ep 3580 | M 0.6394 | Scar 0.0000 | SR 0.75 | Rad 0.60 | Lvl 8
+  >>> NUCLEATION SUCCESS: Level 9 <<<
+Ep 3600 | M 0.2804 | Scar 0.0000 | SR 0.25 | Rad 0.55 | Lvl 9
+Ep 3620 | M 0.5786 | Scar 0.0000 | SR 0.47 | Rad 0.55 | Lvl 9
+Ep 3640 | M 0.5561 | Scar 0.0000 | SR 0.52 | Rad 0.55 | Lvl 9
+Ep 3660 | M 0.2070 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 3680 | M 0.1920 | Scar 0.0000 | SR 0.48 | Rad 0.55 | Lvl 9
+Ep 3700 | M 0.1813 | Scar 0.0000 | SR 0.48 | Rad 0.55 | Lvl 9
+Ep 3720 | M 0.1841 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 3740 | M 0.2130 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 3760 | M 0.3230 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 3780 | M 0.2186 | Scar 0.0000 | SR 0.44 | Rad 0.55 | Lvl 9
+Ep 3800 | M 0.2160 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 3820 | M 0.2227 | Scar 0.0000 | SR 0.38 | Rad 0.55 | Lvl 9
+Ep 3840 | M 0.2250 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 3860 | M 0.2064 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 3880 | M 0.5401 | Scar 0.0000 | SR 0.52 | Rad 0.55 | Lvl 9
+Ep 3900 | M 0.5998 | Scar 0.0000 | SR 0.56 | Rad 0.55 | Lvl 9
+Ep 3920 | M 0.2008 | Scar 0.0000 | SR 0.46 | Rad 0.55 | Lvl 9
+Ep 3940 | M 0.1915 | Scar 0.0000 | SR 0.36 | Rad 0.55 | Lvl 9
+Ep 3960 | M 0.5934 | Scar 0.0000 | SR 0.38 | Rad 0.55 | Lvl 9
+Ep 3980 | M 0.6744 | Scar 0.0000 | SR 0.52 | Rad 0.55 | Lvl 9
+Ep 4000 | M 0.1626 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4020 | M 0.1761 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 4040 | M 0.2257 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4060 | M 0.2600 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4080 | M 0.1596 | Scar 0.0000 | SR 0.38 | Rad 0.55 | Lvl 9
+Ep 4100 | M 0.2163 | Scar 0.0000 | SR 0.34 | Rad 0.55 | Lvl 9
+Ep 4120 | M 0.1936 | Scar 0.0000 | SR 0.34 | Rad 0.55 | Lvl 9
+Ep 4140 | M 0.6029 | Scar 0.0000 | SR 0.48 | Rad 0.55 | Lvl 9
+Ep 4160 | M 0.2127 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4180 | M 0.2426 | Scar 0.0000 | SR 0.34 | Rad 0.55 | Lvl 9
+Ep 4200 | M 0.2408 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 4220 | M 0.2402 | Scar 0.0000 | SR 0.30 | Rad 0.55 | Lvl 9
+Ep 4240 | M 0.2309 | Scar 0.0000 | SR 0.26 | Rad 0.55 | Lvl 9
+Ep 4260 | M 0.2308 | Scar 0.0000 | SR 0.30 | Rad 0.55 | Lvl 9
+Ep 4280 | M 0.2311 | Scar 0.0000 | SR 0.28 | Rad 0.55 | Lvl 9
+Ep 4300 | M 0.2379 | Scar 0.0000 | SR 0.34 | Rad 0.55 | Lvl 9
+Ep 4320 | M 0.2263 | Scar 0.0000 | SR 0.30 | Rad 0.55 | Lvl 9
+Ep 4340 | M 0.2080 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4360 | M 0.2496 | Scar 0.0000 | SR 0.48 | Rad 0.55 | Lvl 9
+Ep 4380 | M 0.2277 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4400 | M 0.4756 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4420 | M 0.2444 | Scar 0.0000 | SR 0.48 | Rad 0.55 | Lvl 9
+Ep 4440 | M 0.2225 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 4460 | M 0.2181 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4480 | M 0.2453 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4500 | M 0.4354 | Scar 0.0000 | SR 0.60 | Rad 0.55 | Lvl 9
+Ep 4520 | M 0.6000 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4540 | M 0.2480 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4560 | M 0.4830 | Scar 0.0000 | SR 0.52 | Rad 0.55 | Lvl 9
+Ep 4580 | M 0.2315 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4600 | M 0.3994 | Scar 0.0000 | SR 0.52 | Rad 0.55 | Lvl 9
+Ep 4620 | M 0.2422 | Scar 0.0000 | SR 0.56 | Rad 0.55 | Lvl 9
+Ep 4640 | M 0.2349 | Scar 0.0000 | SR 0.42 | Rad 0.55 | Lvl 9
+Ep 4660 | M 0.3674 | Scar 0.0000 | SR 0.40 | Rad 0.55 | Lvl 9
+Ep 4680 | M 0.2697 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4700 | M 0.1907 | Scar 0.0000 | SR 0.50 | Rad 0.55 | Lvl 9
+Ep 4720 | M 0.2276 | Scar 0.0000 | SR 0.56 | Rad 0.55 | Lvl 9
+Ep 4740 | M 0.5899 | Scar 0.0000 | SR 0.68 | Rad 0.55 | Lvl 9
+Ep 4760 | M 0.1772 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4780 | M 0.2000 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4800 | M 0.2118 | Scar 0.0000 | SR 0.60 | Rad 0.55 | Lvl 9
+Ep 4820 | M 0.2167 | Scar 0.0000 | SR 0.60 | Rad 0.55 | Lvl 9
+Ep 4840 | M 0.1824 | Scar 0.0000 | SR 0.58 | Rad 0.55 | Lvl 9
+Ep 4860 | M 0.6338 | Scar 0.0000 | SR 0.72 | Rad 0.55 | Lvl 9
+  >>> NUCLEATION SUCCESS: Level 10 <<<
+Ep 4880 | M 0.6645 | Scar 0.0000 | SR 0.55 | Rad 0.50 | Lvl 10
+Ep 4900 | M 0.6076 | Scar 0.0000 | SR 0.60 | Rad 0.50 | Lvl 10
+  >>> NUCLEATION SUCCESS: Level 11 <<<
+Ep 4920 | M 0.1624 | Scar 0.0000 | SR 0.25 | Rad 0.45 | Lvl 11
+Ep 4940 | M 0.5868 | Scar 0.0000 | SR 0.38 | Rad 0.45 | Lvl 11
+Ep 4960 | M 0.2249 | Scar 0.0000 | SR 0.42 | Rad 0.45 | Lvl 11
+Ep 4980 | M 0.6473 | Scar 0.0000 | SR 0.42 | Rad 0.45 | Lvl 11
+Ep 5000 | M 0.1935 | Scar 0.0000 | SR 0.58 | Rad 0.45 | Lvl 11
+Ep 5020 | M 0.2439 | Scar 0.0000 | SR 0.58 | Rad 0.45 | Lvl 11
+Ep 5040 | M 0.2598 | Scar 0.0000 | SR 0.42 | Rad 0.45 | Lvl 11
+Ep 5060 | M 0.5581 | Scar 0.0000 | SR 0.38 | Rad 0.45 | Lvl 11
+Ep 5080 | M 0.3423 | Scar 0.0000 | SR 0.54 | Rad 0.45 | Lvl 11
+Ep 5100 | M 0.4571 | Scar 0.0000 | SR 0.54 | Rad 0.45 | Lvl 11
+Ep 5120 | M 0.4126 | Scar 0.0000 | SR 0.66 | Rad 0.45 | Lvl 11
+  >>> NUCLEATION SUCCESS: Level 12 <<<
+Ep 5140 | M 0.2663 | Scar 0.0000 | SR 0.75 | Rad 0.40 | Lvl 12
+  >>> NUCLEATION SUCCESS: Level 13 <<<
+Ep 5160 | M 0.5842 | Scar 0.0000 | SR 0.90 | Rad 0.40 | Lvl 13
+  >>> NUCLEATION SUCCESS: Level 14 <<<
+Ep 5180 | M 0.5968 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 14
+  >>> NUCLEATION SUCCESS: Level 15 <<<
+Ep 5200 | M 0.5884 | Scar 0.0000 | SR 0.45 | Rad 0.40 | Lvl 15
+Ep 5220 | M 0.3196 | Scar 0.0000 | SR 0.57 | Rad 0.40 | Lvl 15
+Ep 5240 | M 0.5836 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 15
+Ep 5260 | M 0.3265 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 15
+Ep 5280 | M 0.2982 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 15
+Ep 5300 | M 0.5903 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 15
+Ep 5320 | M 0.3301 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 15
+Ep 5340 | M 0.4091 | Scar 0.0000 | SR 0.44 | Rad 0.40 | Lvl 15
+Ep 5360 | M 0.2510 | Scar 0.0000 | SR 0.38 | Rad 0.40 | Lvl 15
+Ep 5380 | M 0.6617 | Scar 0.0000 | SR 0.54 | Rad 0.40 | Lvl 15
+Ep 5400 | M 0.6149 | Scar 0.0000 | SR 0.62 | Rad 0.40 | Lvl 15
+  >>> NUCLEATION SUCCESS: Level 16 <<<
+Ep 5420 | M 0.4083 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 16
+Ep 5440 | M 0.3825 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 16
+Ep 5460 | M 0.3323 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 16
+Ep 5480 | M 0.3262 | Scar 0.0000 | SR 0.44 | Rad 0.40 | Lvl 16
+Ep 5500 | M 0.6301 | Scar 0.0000 | SR 0.52 | Rad 0.40 | Lvl 16
+Ep 5520 | M 0.3885 | Scar 0.0000 | SR 0.58 | Rad 0.40 | Lvl 16
+Ep 5540 | M 0.6391 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 16
+  >>> NUCLEATION SUCCESS: Level 17 <<<
+Ep 5560 | M 0.6560 | Scar 0.0000 | SR 0.75 | Rad 0.40 | Lvl 17
+  >>> NUCLEATION SUCCESS: Level 18 <<<
+Ep 5580 | M 0.5940 | Scar 0.0000 | SR 0.35 | Rad 0.40 | Lvl 18
+Ep 5600 | M 0.6068 | Scar 0.0000 | SR 0.42 | Rad 0.40 | Lvl 18
+Ep 5620 | M 0.6055 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 18
+Ep 5640 | M 0.5756 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 18
+  >>> NUCLEATION SUCCESS: Level 19 <<<
+Ep 5660 | M 0.5895 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 19
+  >>> NUCLEATION SUCCESS: Level 20 <<<
+Ep 5680 | M 0.6456 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 20
+Ep 5700 | M 0.6385 | Scar 0.0000 | SR 0.55 | Rad 0.40 | Lvl 20
+Ep 5720 | M 0.4341 | Scar 0.0000 | SR 0.58 | Rad 0.40 | Lvl 20
+Ep 5740 | M 0.3461 | Scar 0.0000 | SR 0.64 | Rad 0.40 | Lvl 20
+  >>> NUCLEATION SUCCESS: Level 21 <<<
+Ep 5760 | M 0.4276 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 21
+Ep 5780 | M 0.2587 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 21
+Ep 5800 | M 0.2530 | Scar 0.0000 | SR 0.56 | Rad 0.40 | Lvl 21
+Ep 5820 | M 0.2744 | Scar 0.0000 | SR 0.58 | Rad 0.40 | Lvl 21
+Ep 5840 | M 0.2767 | Scar 0.0000 | SR 0.54 | Rad 0.40 | Lvl 21
+Ep 5860 | M 0.6567 | Scar 0.0000 | SR 0.72 | Rad 0.40 | Lvl 21
+  >>> NUCLEATION SUCCESS: Level 22 <<<
+Ep 5880 | M 0.5308 | Scar 0.0000 | SR 0.35 | Rad 0.40 | Lvl 22
+Ep 5900 | M 0.5041 | Scar 0.0000 | SR 0.53 | Rad 0.40 | Lvl 22
+Ep 5920 | M 0.5478 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 22
+  >>> NUCLEATION SUCCESS: Level 23 <<<
+Ep 5940 | M 0.2418 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 23
+Ep 5960 | M 0.5032 | Scar 0.0000 | SR 0.57 | Rad 0.40 | Lvl 23
+Ep 5980 | M 0.5673 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 23
+Ep 6000 | M 0.5433 | Scar 0.0000 | SR 0.52 | Rad 0.40 | Lvl 23
+Ep 6020 | M 0.5207 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 23
+  >>> NUCLEATION SUCCESS: Level 24 <<<
+Ep 6040 | M 0.5885 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 24
+Ep 6060 | M 0.5495 | Scar 0.0000 | SR 0.57 | Rad 0.40 | Lvl 24
+Ep 6080 | M 0.4719 | Scar 0.0000 | SR 0.56 | Rad 0.40 | Lvl 24
+Ep 6100 | M 0.3334 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 24
+  >>> NUCLEATION SUCCESS: Level 25 <<<
+Ep 6120 | M 0.2442 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 25
+  >>> NUCLEATION SUCCESS: Level 26 <<<
+Ep 6140 | M 0.4102 | Scar 0.0000 | SR 0.65 | Rad 0.40 | Lvl 26
+  >>> NUCLEATION SUCCESS: Level 27 <<<
+Ep 6160 | M 0.3120 | Scar 0.0000 | SR 0.45 | Rad 0.40 | Lvl 27
+Ep 6180 | M 0.5257 | Scar 0.0000 | SR 0.53 | Rad 0.40 | Lvl 27
+Ep 6200 | M 0.5450 | Scar 0.0000 | SR 0.46 | Rad 0.40 | Lvl 27
+Ep 6220 | M 0.5307 | Scar 0.0000 | SR 0.48 | Rad 0.40 | Lvl 27
+Ep 6240 | M 0.1889 | Scar 0.0000 | SR 0.38 | Rad 0.40 | Lvl 27
+Ep 6260 | M 0.4369 | Scar 0.0000 | SR 0.52 | Rad 0.40 | Lvl 27
+Ep 6280 | M 0.4668 | Scar 0.0001 | SR 0.56 | Rad 0.40 | Lvl 27
+Ep 6300 | M 0.1120 | Scar 0.0001 | SR 0.46 | Rad 0.40 | Lvl 27
+Ep 6320 | M 0.4825 | Scar 0.0002 | SR 0.54 | Rad 0.40 | Lvl 27
+Ep 6340 | M 0.3960 | Scar 0.0002 | SR 0.58 | Rad 0.40 | Lvl 27
+Ep 6360 | M 0.2595 | Scar 0.0002 | SR 0.62 | Rad 0.40 | Lvl 27
+  >>> NUCLEATION SUCCESS: Level 28 <<<
+Ep 6380 | M 0.1289 | Scar 0.0002 | SR 0.40 | Rad 0.40 | Lvl 28
+Ep 6400 | M 0.5042 | Scar 0.0002 | SR 0.42 | Rad 0.40 | Lvl 28
+Ep 6420 | M 0.4957 | Scar 0.0002 | SR 0.50 | Rad 0.40 | Lvl 28
+Ep 6440 | M 0.4736 | Scar 0.0002 | SR 0.50 | Rad 0.40 | Lvl 28
+Ep 6480 | M 0.2820 | Scar 0.0002 | SR 0.56 | Rad 0.40 | Lvl 28
+Ep 6500 | M 0.3746 | Scar 0.0002 | SR 0.50 | Rad 0.40 | Lvl 28
+Ep 6520 | M 0.4818 | Scar 0.0002 | SR 0.52 | Rad 0.40 | Lvl 28
+Ep 6540 | M 0.3435 | Scar 0.0002 | SR 0.58 | Rad 0.40 | Lvl 28
+Ep 6560 | M 0.2710 | Scar 0.0002 | SR 0.54 | Rad 0.40 | Lvl 28
+Ep 6580 | M 0.4188 | Scar 0.0002 | SR 0.52 | Rad 0.40 | Lvl 28
+Ep 6600 | M 0.3718 | Scar 0.0002 | SR 0.48 | Rad 0.40 | Lvl 28
+Ep 6620 | M 0.6383 | Scar 0.0002 | SR 0.60 | Rad 0.40 | Lvl 28
+  >>> NUCLEATION SUCCESS: Level 29 <<<
+Ep 6640 | M 0.5413 | Scar 0.0002 | SR 0.65 | Rad 0.40 | Lvl 29
+  >>> NUCLEATION SUCCESS: Level 30 <<<
+Ep 6660 | M 0.4952 | Scar 0.0002 | SR 0.65 | Rad 0.40 | Lvl 30
+  >>> NUCLEATION SUCCESS: Level 31 <<<
+Ep 6680 | M 0.6464 | Scar 0.0002 | SR 0.60 | Rad 0.40 | Lvl 31
+  >>> NUCLEATION SUCCESS: Level 32 <<<
+Ep 6700 | M 0.3718 | Scar 0.0003 | SR 0.60 | Rad 0.40 | Lvl 32
+  >>> NUCLEATION SUCCESS: Level 33 <<<
+Ep 6720 | M 0.4207 | Scar 0.0003 | SR 0.60 | Rad 0.40 | Lvl 33
+  >>> NUCLEATION SUCCESS: Level 34 <<<
+Ep 6740 | M 0.6627 | Scar 0.0004 | SR 0.95 | Rad 0.40 | Lvl 34
+  >>> NUCLEATION SUCCESS: Level 35 <<<
+Ep 6760 | M 0.3880 | Scar 0.0004 | SR 0.75 | Rad 0.40 | Lvl 35
+  >>> NUCLEATION SUCCESS: Level 36 <<<
+Ep 6780 | M 0.4423 | Scar 0.0004 | SR 0.50 | Rad 0.40 | Lvl 36
+Ep 6800 | M 0.2852 | Scar 0.0004 | SR 0.57 | Rad 0.40 | Lvl 36
+Ep 6820 | M 0.6936 | Scar 0.0004 | SR 0.64 | Rad 0.40 | Lvl 36
+  >>> NUCLEATION SUCCESS: Level 37 <<<
+Ep 6840 | M 0.5583 | Scar 0.0004 | SR 0.65 | Rad 0.40 | Lvl 37
+  >>> NUCLEATION SUCCESS: Level 38 <<<
+Ep 6860 | M 0.4902 | Scar 0.0004 | SR 0.15 | Rad 0.40 | Lvl 38
+Ep 6880 | M 0.6170 | Scar 0.0004 | SR 0.47 | Rad 0.40 | Lvl 38
+Ep 6900 | M 0.4798 | Scar 0.0004 | SR 0.64 | Rad 0.40 | Lvl 38
+  >>> NUCLEATION SUCCESS: Level 39 <<<
+
+
+--- CAESAR V12.10: NUCLEATION JUMPSTART ---
+Ep    0 | M 0.5318 | Scar 0.0000 | SR 0.00 | Rad 1.00 | Lvl 0
+Ep   20 | M 0.6966 | Scar 0.0000 | SR 0.81 | Rad 1.00 | Lvl 0
+  >>> NUCLEATION SUCCESS: Level 1 <<<
+Ep   40 | M 0.5180 | Scar 0.0000 | SR 0.55 | Rad 0.95 | Lvl 1
+Ep   60 | M 0.5368 | Scar 0.0000 | SR 0.55 | Rad 0.95 | Lvl 1
+Ep   80 | M 0.7308 | Scar 0.0000 | SR 0.68 | Rad 0.95 | Lvl 1
+Ep  100 | M 0.7359 | Scar 0.0000 | SR 0.90 | Rad 0.95 | Lvl 1
+  >>> NUCLEATION SUCCESS: Level 2 <<<
+Ep  120 | M 0.5326 | Scar 0.0000 | SR 0.65 | Rad 0.90 | Lvl 2
+Ep  140 | M 0.5350 | Scar 0.0000 | SR 0.53 | Rad 0.90 | Lvl 2
+Ep  160 | M 0.7305 | Scar 0.0000 | SR 0.60 | Rad 0.90 | Lvl 2
+Ep  180 | M 0.7378 | Scar 0.0000 | SR 0.90 | Rad 0.90 | Lvl 2
+  >>> NUCLEATION SUCCESS: Level 3 <<<
+Ep  200 | M 0.7339 | Scar 0.0000 | SR 1.00 | Rad 0.85 | Lvl 3
+  >>> NUCLEATION SUCCESS: Level 4 <<<
+Ep  220 | M 0.5720 | Scar 0.0000 | SR 1.00 | Rad 0.80 | Lvl 4
+  >>> NUCLEATION SUCCESS: Level 5 <<<
+Ep  240 | M 0.5791 | Scar 0.0000 | SR 0.80 | Rad 0.75 | Lvl 5
+  >>> NUCLEATION SUCCESS: Level 6 <<<
+Ep  260 | M 0.5136 | Scar 0.0000 | SR 0.60 | Rad 0.70 | Lvl 6
+Ep  280 | M 0.7273 | Scar 0.0000 | SR 0.80 | Rad 0.70 | Lvl 6
+  >>> NUCLEATION SUCCESS: Level 7 <<<
+Ep  300 | M 0.7374 | Scar 0.0000 | SR 1.00 | Rad 0.65 | Lvl 7
+  >>> NUCLEATION SUCCESS: Level 8 <<<
+Ep  320 | M 0.7168 | Scar 0.0000 | SR 1.00 | Rad 0.60 | Lvl 8
+  >>> NUCLEATION SUCCESS: Level 9 <<<
+Ep  340 | M 0.6963 | Scar 0.0000 | SR 0.85 | Rad 0.55 | Lvl 9
+  >>> NUCLEATION SUCCESS: Level 10 <<<
+Ep  360 | M 0.6182 | Scar 0.0000 | SR 0.95 | Rad 0.50 | Lvl 10
+  >>> NUCLEATION SUCCESS: Level 11 <<<
+Ep  380 | M 0.4900 | Scar 0.0000 | SR 0.35 | Rad 0.45 | Lvl 11
+Ep  400 | M 0.4911 | Scar 0.0000 | SR 0.42 | Rad 0.45 | Lvl 11
+Ep  420 | M 0.4884 | Scar 0.0000 | SR 0.50 | Rad 0.45 | Lvl 11
+Ep  440 | M 0.4960 | Scar 0.0000 | SR 0.56 | Rad 0.45 | Lvl 11
+Ep  460 | M 0.6532 | Scar 0.0000 | SR 0.68 | Rad 0.45 | Lvl 11
+  >>> NUCLEATION SUCCESS: Level 12 <<<
+Ep  480 | M 0.6570 | Scar 0.0000 | SR 0.95 | Rad 0.40 | Lvl 12
+  >>> NUCLEATION SUCCESS: Level 13 <<<
+Ep  500 | M 0.4914 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 13
+Ep  520 | M 0.7221 | Scar 0.0000 | SR 0.65 | Rad 0.40 | Lvl 13
+  >>> NUCLEATION SUCCESS: Level 14 <<<
+Ep  540 | M 0.7241 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 14
+  >>> NUCLEATION SUCCESS: Level 15 <<<
+Ep  560 | M 0.7279 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 15
+  >>> NUCLEATION SUCCESS: Level 16 <<<
+Ep  580 | M 0.7209 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 16
+  >>> NUCLEATION SUCCESS: Level 17 <<<
+Ep  600 | M 0.4474 | Scar 0.0000 | SR 0.90 | Rad 0.40 | Lvl 17
+  >>> NUCLEATION SUCCESS: Level 18 <<<
+Ep  620 | M 0.6963 | Scar 0.0000 | SR 1.00 | Rad 0.40 | Lvl 18
+  >>> NUCLEATION SUCCESS: Level 19 <<<
+Ep  640 | M 0.4805 | Scar 0.0000 | SR 0.90 | Rad 0.40 | Lvl 19
+  >>> NUCLEATION SUCCESS: Level 20 <<<
+Ep  660 | M 0.4995 | Scar 0.0000 | SR 0.55 | Rad 0.40 | Lvl 20
+Ep  680 | M 0.4539 | Scar 0.0000 | SR 0.57 | Rad 0.40 | Lvl 20
+Ep  700 | M 0.5209 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 20
+  >>> NUCLEATION SUCCESS: Level 21 <<<
+Ep  720 | M 0.4790 | Scar 0.0000 | SR 0.55 | Rad 0.40 | Lvl 21
+Ep  740 | M 0.4329 | Scar 0.0000 | SR 0.53 | Rad 0.40 | Lvl 21
+Ep  760 | M 0.4663 | Scar 0.0000 | SR 0.42 | Rad 0.40 | Lvl 21
+Ep  780 | M 0.4240 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 21
+Ep  800 | M 0.3711 | Scar 0.0000 | SR 0.54 | Rad 0.40 | Lvl 21
+Ep  820 | M 0.2948 | Scar 0.0000 | SR 0.50 | Rad 0.40 | Lvl 21
+Ep  840 | M 0.2932 | Scar 0.0000 | SR 0.38 | Rad 0.40 | Lvl 21
+Ep  860 | M 0.2859 | Scar 0.0000 | SR 0.32 | Rad 0.40 | Lvl 21
+Ep  880 | M 0.7187 | Scar 0.0000 | SR 0.40 | Rad 0.40 | Lvl 21
+Ep  900 | M 0.4474 | Scar 0.0000 | SR 0.64 | Rad 0.40 | Lvl 21
+  >>> NUCLEATION SUCCESS: Level 22 <<<
+Ep  920 | M 0.3030 | Scar 0.0000 | SR 0.60 | Rad 0.40 | Lvl 22
+  >>> NUCLEATION SUCCESS: Level 23 <<<
+Ep  940 | M 0.3804 | Scar 0.0000 | SR 0.30 | Rad 0.40 | Lvl 23
+Ep  960 | M 0.2991 | Scar 0.0000 | SR 0.20 | Rad 0.40 | Lvl 23
+Ep  980 | M 0.4861 | Scar 0.0000 | SR 0.30 | Rad 0.40 | Lvl 23
+Ep 1000 | M 0.5189 | Scar 0.0000 | SR 0.32 | Rad 0.40 | Lvl 23
+Ep 1020 | M 0.4410 | Scar 0.0000 | SR 0.24 | Rad 0.40 | Lvl 23
+Ep 1040 | M 0.4015 | Scar 0.0000 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1060 | M 0.1174 | Scar 0.0003 | SR 0.10 | Rad 0.40 | Lvl 23
+Ep 1080 | M 0.1211 | Scar 0.0006 | SR 0.12 | Rad 0.40 | Lvl 23
+Ep 1100 | M 0.2157 | Scar 0.0008 | SR 0.20 | Rad 0.40 | Lvl 23
+Ep 1120 | M 0.1060 | Scar 0.0011 | SR 0.36 | Rad 0.40 | Lvl 23
+Ep 1140 | M 0.1133 | Scar 0.0018 | SR 0.34 | Rad 0.40 | Lvl 23
+Ep 1160 | M 0.2423 | Scar 0.0023 | SR 0.30 | Rad 0.40 | Lvl 23
+Ep 1180 | M 0.1224 | Scar 0.0028 | SR 0.30 | Rad 0.40 | Lvl 23
+Ep 1200 | M 0.2621 | Scar 0.0030 | SR 0.28 | Rad 0.40 | Lvl 23
+Ep 1220 | M 0.1237 | Scar 0.0030 | SR 0.24 | Rad 0.40 | Lvl 23
+Ep 1240 | M 0.1187 | Scar 0.0031 | SR 0.24 | Rad 0.40 | Lvl 23
+Ep 1260 | M 0.1295 | Scar 0.0031 | SR 0.18 | Rad 0.40 | Lvl 23
+Ep 1280 | M 0.1417 | Scar 0.0031 | SR 0.10 | Rad 0.40 | Lvl 23
+Ep 1300 | M 0.1379 | Scar 0.0031 | SR 0.12 | Rad 0.40 | Lvl 23
+Ep 1320 | M 0.1423 | Scar 0.0031 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1340 | M 0.1365 | Scar 0.0031 | SR 0.12 | Rad 0.40 | Lvl 23
+Ep 1360 | M 0.1326 | Scar 0.0031 | SR 0.08 | Rad 0.40 | Lvl 23
+Ep 1380 | M 0.1385 | Scar 0.0031 | SR 0.06 | Rad 0.40 | Lvl 23
+Ep 1400 | M 0.1316 | Scar 0.0031 | SR 0.06 | Rad 0.40 | Lvl 23
+Ep 1420 | M 0.1233 | Scar 0.0031 | SR 0.10 | Rad 0.40 | Lvl 23
+Ep 1440 | M 0.1201 | Scar 0.0031 | SR 0.12 | Rad 0.40 | Lvl 23
+Ep 1460 | M 0.1165 | Scar 0.0032 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1480 | M 0.1239 | Scar 0.0034 | SR 0.10 | Rad 0.40 | Lvl 23
+Ep 1500 | M 0.1268 | Scar 0.0034 | SR 0.06 | Rad 0.40 | Lvl 23
+Ep 1520 | M 0.1383 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1540 | M 0.1363 | Scar 0.0034 | SR 0.18 | Rad 0.40 | Lvl 23
+Ep 1560 | M 0.1418 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1580 | M 0.1428 | Scar 0.0034 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1600 | M 0.1431 | Scar 0.0034 | SR 0.08 | Rad 0.40 | Lvl 23
+Ep 1620 | M 0.1456 | Scar 0.0034 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1640 | M 0.1341 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1660 | M 0.1342 | Scar 0.0034 | SR 0.08 | Rad 0.40 | Lvl 23
+Ep 1680 | M 0.1355 | Scar 0.0034 | SR 0.10 | Rad 0.40 | Lvl 23
+Ep 1700 | M 0.1315 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1720 | M 0.1282 | Scar 0.0034 | SR 0.18 | Rad 0.40 | Lvl 23
+Ep 1740 | M 0.1308 | Scar 0.0034 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1760 | M 0.1361 | Scar 0.0034 | SR 0.12 | Rad 0.40 | Lvl 23
+Ep 1780 | M 0.1389 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1800 | M 0.1391 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+Ep 1820 | M 0.1349 | Scar 0.0034 | SR 0.14 | Rad 0.40 | Lvl 23
+Ep 1840 | M 0.1359 | Scar 0.0034 | SR 0.16 | Rad 0.40 | Lvl 23
+
+
