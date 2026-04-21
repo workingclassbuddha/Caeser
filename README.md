@@ -1,41 +1,74 @@
-# CAESAR  
-**Constraint-Aware Embodied Scarred Agent for Reality**  
-v12.10 – Nucleation Jumpstart
+# CAESAR
 
-A minimal PPO-based agent that demonstrates **Constraint Dynamics** in action:  
-how consciousness-like coherence **crystallizes** under tightening spatial (Λ), temporal (Γ), and metabolic (Θ) constraints — and how it **melts**, **scars**, and only partially recovers.
+Constraint-Aware Embodied Scarred Agent for Reality.
 
-From *The Outlines of Sanity* — a thermodynamic theory of mind, sanity, and phase transitions.  
-No metaphors here. Just runnable physics of the vessel.
+This repository packages the CAESAR v12.10 prototype as a small, shareable research codebase. It keeps the core idea intact: a recurrent embodied agent learns under tightening spatial, temporal, and metabolic constraints while scar and hysteresis make recovery harder than collapse.
 
-## Core Idea (in Code)
+## What This Repo Is
 
-An agent navigates a shrinking 2D arena toward a goal:
+CAESAR is a constraint-dynamics-inspired toy environment and recurrent actor-critic agent. It is not presented as a polished benchmark or a clinical model. It is a compact experimental system for exploring:
 
-- **Λ (Spatial Lattice)** → success radius shrinks with level (1.0 → 0.40 floor)  
-- **Γ (Temporal Strobe)** → GRU + velocity damping binds time  
-- **Θ (Metabolic Anchor)** → battery drains on thrust; low battery + low coherence → scar etches in  
-- **Mirror (M)** → emergent coherence estimate (lattice sharpness × battery norm); breathing zone ~0.18–0.70 required for stable progress  
+- shrinking spatial tolerance (`Lambda`)
+- temporal binding through recurrence and motion damping (`Gamma`)
+- energetic cost through battery depletion (`Theta`)
+- persistent scar as intentional hysteresis, not incidental noise
 
-Scar is persistent damage: prolonged low-M/low-battery episodes leave hysteresis — future nucleation is harder. Healing is partial. Collapse is predictable.
+## Project Layout
 
-This is not standard RL. It's a toy model of why minds freeze into clarity or melt into vapor when constraints fail.
+```text
+caesar/
+  core.py           Environment and model definitions
+  training.py       Main training loop and CLI
+  experiments.py    Comparative condition harness
+scripts/
+  train_caesar.py
+  compare_conditions.py
+artifacts/
+  caesar_logs_three_long_runs.txt
+outputs/
+  Generated JSON logs live here
+```
 
-## What's in This Repo
-
-- `code 12.10`          → Main training script (PyTorch PPO + custom net, scar buffer, jumpstart curriculum)  
-- `log 3 runs`          → Concatenated output from three long training runs (levels up to 39, deep stalls, scar accumulation ~0.003–0.005)  
-- `caeser 5 test suit`  → Early test/validation suite (v5-era, kept for continuity)  
-- `LICENSE`             → MIT (free to fork, run, modify)
-
-## Quick Start
+## Installation
 
 ```bash
-# Requirements (Python 3.8+)
-pip install torch numpy
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-# Run training (rename file if needed for clarity)
-python "code 12.10"
+## Usage
 
-# Watch console: M_state (Mirror coherence), Scar, SR (success rate), level promotions
-# Expect rapid early levels → brittleness at radius=0.40 → scar only in prolonged stalls
+Train the default v12.10 setup:
+
+```bash
+python -m caesar.training --episodes 30000
+```
+
+or:
+
+```bash
+python scripts/train_caesar.py --episodes 30000
+```
+
+Run the comparative condition harness:
+
+```bash
+python -m caesar.experiments --episodes 3000 --output outputs/caesar_condition_results.json
+```
+
+## Notes on the Model
+
+- The repo now describes the method honestly as a recurrent actor-critic prototype rather than PPO.
+- Scar is intentional. It is part of the model's hysteresis story and should be read as persistent basin deformation under low-mirror, low-energy stress.
+- The training update pairs each timestep's log-probability with its own advantage, which fixes the old broadcast bug in the original script.
+- Spawn positions are sampled with a minimum start-goal separation so early successes are less likely to come from degenerate initial states.
+
+## Outputs
+
+- `outputs/` is for generated JSON summaries from training or experiment runs.
+- `artifacts/caesar_logs_three_long_runs.txt` preserves the original long-run console output bundled with the project.
+
+## License
+
+MIT. See `LICENSE`.
