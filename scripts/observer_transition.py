@@ -30,10 +30,14 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
         hidden_state = torch.zeros(1, 1, agent.hidden_size, device=device)
         self_state = torch.zeros(1, 1, agent.hidden_size, device=device)
         rollout = EpisodeRollout([], [], [], False, 0.0, 0)
+        self_losses: list[torch.Tensor] = []
         done = False
         while not done:
             obs = torch.as_tensor(observation, dtype=torch.float32, device=device).view(1, 1, -1)
             mean, value, hidden_state, self_state, predicted_self = agent(obs, hidden_state, env.battery, self_state)
+            # The self-model predicts the next internal state from the current internal state.
+            # Its auxiliary loss is deliberately tiny so task learning remains dominant.
+            self_losses.append(torch.mean((predicted_self - hidden_state.detach()) ** 2))
             std = torch.exp(agent.log_std).clamp(1e-3, 1.0) * compute_noise_scale(episode, cfg)
             dist = Normal(mean, std.view(1, 1, -1))
             action = dist.sample()
@@ -48,12 +52,19 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
             self_trace.append(predicted_self.detach().cpu().numpy().reshape(-1))
 
         apply_actor_critic_update(agent, optimizer, rollout, cfg, device)
+        # Auxiliary self-model training makes R a learned variable rather than a decorative readout.
+        optimizer.zero_grad(set_to_none=True)
+        aux_loss = torch.stack(self_losses).mean()
+        (0.05 * aux_loss).backward()
+        torch.nn.utils.clip_grad_norm_(agent.parameters(), cfg.gradient_clip_norm)
+        optimizer.step()
         success.append(int(rollout.success))
+
         if episode % 20 == 0 and len(hidden_trace) >= 10:
             h = np.asarray(hidden_trace[-500:])
             p = np.asarray(self_trace[-500:])
             metrics = measure_observer_order(h, p)
-            row = {"episode": episode, **metrics.as_dict(), "mirror": float(agent.M_state.item()), "scar": float(agent.scar.item()), "success_rate": float(np.mean(success[-50:]))}
+            row = {"episode": episode, **metrics.as_dict(), "mirror": float(agent.M_state.item()), "scar": float(agent.scar.item()), "success_rate": float(np.mean(success[-50:])), "self_model_loss": float(aux_loss.detach().cpu())}
             metrics_log.append(row)
             print(name, row)
 
