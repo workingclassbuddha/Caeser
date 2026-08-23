@@ -12,7 +12,6 @@ from .core import CAESARNet, ModelConfig
 @dataclass(slots=True)
 class ObserverMetrics:
     """Operational proxies; these are not a claim of subjective experience."""
-
     integration: float
     temporal_persistence: float
     causal_closure: float
@@ -30,8 +29,7 @@ def _safe_corr(a: np.ndarray, b: np.ndarray) -> float:
     b = np.asarray(b, dtype=float).reshape(-1)
     if len(a) < 3 or np.std(a) < 1e-9 or np.std(b) < 1e-9:
         return 0.0
-    value = float(np.corrcoef(a, b)[0, 1])
-    return float(np.clip(abs(value), 0.0, 1.0))
+    return float(np.clip(abs(float(np.corrcoef(a, b)[0, 1])), 0.0, 1.0))
 
 
 def _normalized_entropy(values: np.ndarray) -> float:
@@ -43,30 +41,22 @@ def _normalized_entropy(values: np.ndarray) -> float:
     return float(np.clip(entropy / np.log(len(p)), 0.0, 1.0)) if len(p) > 1 else 0.0
 
 
-def measure_observer_order(
-    hidden_states: np.ndarray,
-    self_predictions: np.ndarray | None = None,
-    ablated_predictions: np.ndarray | None = None,
-) -> ObserverMetrics:
+def measure_observer_order(hidden_states: np.ndarray, self_predictions: np.ndarray | None = None, ablated_predictions: np.ndarray | None = None) -> ObserverMetrics:
     """Measure falsifiable dynamical proxies; this does not label a system conscious."""
     h = np.asarray(hidden_states, dtype=float)
     if h.ndim != 2 or len(h) < 4:
         raise ValueError("hidden_states must have shape [time, features] with at least 4 rows")
-
     integration = _normalized_entropy(h)
     temporal_persistence = float(np.mean([_safe_corr(h[i], h[i + 1]) for i in range(len(h) - 1)]))
     x, y = h[:-1], h[1:]
     causal_closure = float(np.clip(np.mean([_safe_corr(x[:, i], y[:, i]) for i in range(h.shape[1])]), 0.0, 1.0))
-
     if self_predictions is None:
-        self_prediction = 0.0
-        reflexivity = 0.0
+        self_prediction = reflexivity = 0.0
     else:
         pred = np.asarray(self_predictions, dtype=float)
         target = h[: len(pred)]
         self_prediction = float(np.mean([_safe_corr(pred[:, i], target[:, i]) for i in range(min(pred.shape[1], target.shape[1]))]))
         reflexivity = float(np.clip(self_prediction - temporal_persistence + 0.5, 0.0, 1.0))
-
     if ablated_predictions is None or self_predictions is None:
         irreducibility = 0.0
     else:
@@ -76,27 +66,12 @@ def measure_observer_order(
         full_err = float(np.mean((full - target) ** 2)) + 1e-9
         ablated_err = float(np.mean((ablated - target) ** 2))
         irreducibility = float(np.clip((ablated_err - full_err) / (ablated_err + 1e-9), 0.0, 1.0))
-
-    # Geometric mean prevents one huge metric from masking a missing ingredient.
-    observer_order = float(np.clip(
-        (integration * temporal_persistence * causal_closure * max(self_prediction, 1e-6) * max(irreducibility, 1e-6)) ** 0.2,
-        0.0, 1.0,
-    ))
-
-    return ObserverMetrics(
-        integration=integration,
-        temporal_persistence=temporal_persistence,
-        causal_closure=causal_closure,
-        self_prediction=self_prediction,
-        irreducibility=irreducibility,
-        reflexivity=reflexivity,
-        observer_order=observer_order,
-    )
+    observer_order = float(np.clip((integration * temporal_persistence * causal_closure * max(self_prediction, 1e-6) * max(irreducibility, 1e-6)) ** 0.2, 0.0, 1.0))
+    return ObserverMetrics(integration, temporal_persistence, causal_closure, self_prediction, irreducibility, reflexivity, observer_order)
 
 
 class ReflexiveCAESARNet(nn.Module):
     """CAESAR with a learned model of its own hidden state."""
-
     def __init__(self, model_config: ModelConfig | None = None, recursive: bool = False) -> None:
         super().__init__()
         self.base = CAESARNet(model_config=model_config)
@@ -118,13 +93,11 @@ class ReflexiveCAESARNet(nn.Module):
     def scar(self) -> torch.Tensor:
         return self.base.scar
 
-    def forward(
-        self,
-        x: torch.Tensor,
-        hidden_state: torch.Tensor,
-        battery: float,
-        self_state: torch.Tensor | None = None,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    @property
+    def log_std(self) -> torch.Tensor:
+        return self.base.log_std
+
+    def forward(self, x: torch.Tensor, hidden_state: torch.Tensor, battery: float, self_state: torch.Tensor | None = None) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         action_mean, value, hidden = self.base(x, hidden_state, battery)
         if self_state is None:
             self_state = torch.zeros(1, 1, self.hidden_size, device=x.device, dtype=x.dtype)
