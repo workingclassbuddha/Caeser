@@ -10,8 +10,7 @@ from torch.distributions import Normal
 
 from caesar.core import EmbodiedEnv, EnvConfig
 from caesar.observer import ReflexiveCAESARNet, measure_observer_order
-from caesar.training import apply_actor_critic_update, compute_noise_scale, resolve_device, set_seed
-from caesar.training import EpisodeRollout, TrainingConfig
+from caesar.training import EpisodeRollout, TrainingConfig, apply_actor_critic_update, compute_noise_scale, resolve_device, set_seed
 
 
 def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_name: str | None) -> dict:
@@ -21,11 +20,10 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
     env = EmbodiedEnv(level=0, config=EnvConfig())
     agent = ReflexiveCAESARNet(recursive=recursive).to(device)
     optimizer = torch.optim.Adam(agent.parameters(), lr=cfg.learning_rate)
-
     hidden_trace: list[np.ndarray] = []
     self_trace: list[np.ndarray] = []
     metrics_log: list[dict] = []
-    success = []
+    success: list[int] = []
 
     for episode in range(episodes):
         observation = env.reset()
@@ -36,7 +34,7 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
         while not done:
             obs = torch.as_tensor(observation, dtype=torch.float32, device=device).view(1, 1, -1)
             mean, value, hidden_state, self_state, predicted_self = agent(obs, hidden_state, env.battery, self_state)
-            std = torch.exp(agent.base.log_std).clamp(1e-3, 1.0) * compute_noise_scale(episode, cfg)
+            std = torch.exp(agent.log_std).clamp(1e-3, 1.0) * compute_noise_scale(episode, cfg)
             dist = Normal(mean, std.view(1, 1, -1))
             action = dist.sample()
             observation, reward, done, info = env.step(action.squeeze().detach().cpu().numpy())
@@ -49,9 +47,8 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
             hidden_trace.append(hidden_state.detach().cpu().numpy().reshape(-1))
             self_trace.append(predicted_self.detach().cpu().numpy().reshape(-1))
 
-        apply_actor_critic_update(agent.base, optimizer, rollout, cfg, device)
+        apply_actor_critic_update(agent, optimizer, rollout, cfg, device)
         success.append(int(rollout.success))
-
         if episode % 20 == 0 and len(hidden_trace) >= 10:
             h = np.asarray(hidden_trace[-500:])
             p = np.asarray(self_trace[-500:])
@@ -60,24 +57,25 @@ def run_variant(name: str, recursive: bool, episodes: int, seed: int, device_nam
             metrics_log.append(row)
             print(name, row)
 
-    final = metrics_log[-1] if metrics_log else {}
-    return {"variant": name, "recursive": recursive, "episodes": episodes, "final": final, "history": metrics_log}
+    return {"variant": name, "recursive": recursive, "episodes": episodes, "final": metrics_log[-1] if metrics_log else {}, "history": metrics_log}
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="CAESAR observer-transition experiment")
+    parser = argparse.ArgumentParser(description="Run the CAESAR observer-transition experiment.")
     parser.add_argument("--episodes", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", type=str, default=None)
     parser.add_argument("--output", type=str, default="outputs/observer_transition_results.json")
     args = parser.parse_args()
-
     results = [
         run_variant("REFLEXIVE", False, args.episodes, args.seed, args.device),
         run_variant("RECURSIVE", True, args.episodes, args.seed + 1, args.device),
     ]
-    # The base CAESAR remains the control condition and is compared through the existing harness.
-    payload = {"hypothesis": "observer-like organization is associated with integration + persistence + closure + self-model irreducibility", "results": results}
+    payload = {
+        "hypothesis": "observer-like organization is associated with integration + persistence + closure + self-model irreducibility",
+        "note": "Observer order is an operational proxy, not evidence of subjective experience.",
+        "results": results,
+    }
     path = Path(args.output)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2))
