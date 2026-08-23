@@ -1,0 +1,29 @@
+name: CAESAR Observer Experiment
+
+on:
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: Training episodes per variant
+        required: false
+        default: "1000"
+      seed:
+        description: Base random seed
+        required: false
+        default: "42"
+
+jobs:
+  observer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt pytest
+      - run: pytest -q
+      - run: python scripts/observer_transition.py --episodes "${{ inputs.episodes }}" --seed "${{ inputs.seed }}" --output outputs/observer_transition_results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: caesar-observer-results
+          path: outputs/observer_transition_results.json
