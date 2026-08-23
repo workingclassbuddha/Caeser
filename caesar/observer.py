@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 import numpy as np
 import torch
@@ -22,7 +22,7 @@ class ObserverMetrics:
     observer_order: float
 
     def as_dict(self) -> dict[str, float]:
-        return {k: float(v) for k, v in self.__dict__.items()}
+        return {k: float(v) for k, v in asdict(self).items()}
 
 
 def _safe_corr(a: np.ndarray, b: np.ndarray) -> float:
@@ -55,7 +55,6 @@ def measure_observer_order(
 
     integration = _normalized_entropy(h)
     temporal_persistence = float(np.mean([_safe_corr(h[i], h[i + 1]) for i in range(len(h) - 1)]))
-
     x, y = h[:-1], h[1:]
     causal_closure = float(np.clip(np.mean([_safe_corr(x[:, i], y[:, i]) for i in range(h.shape[1])]), 0.0, 1.0))
 
@@ -78,6 +77,7 @@ def measure_observer_order(
         ablated_err = float(np.mean((ablated - target) ** 2))
         irreducibility = float(np.clip((ablated_err - full_err) / (ablated_err + 1e-9), 0.0, 1.0))
 
+    # Geometric mean prevents one huge metric from masking a missing ingredient.
     observer_order = float(np.clip(
         (integration * temporal_persistence * causal_closure * max(self_prediction, 1e-6) * max(irreducibility, 1e-6)) ** 0.2,
         0.0, 1.0,
