@@ -22,8 +22,12 @@ jobs:
         run: python -m pytest -q tests/test_benchmark.py tests/test_observer.py tests/test_scar_probe.py
       - name: Probe stock scar activation
         run: python -m caesar.scar_probe --seed 42 --episodes 3 --level 0
-      - name: Upload reproducible probe log
+      - name: Scan stock activation across 5 seeds and 2 difficulty levels
+        run: python -m caesar.scar_probe --scan --episodes 1 --output outputs/scar_activation_scan.json
+      - name: Upload reproducible probe logs
         uses: actions/upload-artifact@v4
         with:
-          name: caesar-scar-probe
-          path: outputs/scar_trigger_probe.json
+          name: caesar-scar-probes
+          path: |
+            outputs/scar_trigger_probe.json
+            outputs/scar_activation_scan.json
