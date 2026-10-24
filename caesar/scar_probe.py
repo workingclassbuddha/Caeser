@@ -79,9 +79,23 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--episodes", type=int, default=3)
     parser.add_argument("--level", type=int, default=0)
+    parser.add_argument("--scan", action="store_true", help="Run a preselected 5-seed, 2-level stock-environment scan")
     parser.add_argument("--output", default="outputs/scar_trigger_probe.json")
     args = parser.parse_args()
-    result = probe(args.seed, args.episodes, args.level)
+    if args.scan:
+        seeds = [11, 23, 47, 89, 101]
+        levels = [0, 10]
+        rows = [probe(seed=seed, episodes=args.episodes, level=level)
+                for seed in seeds for level in levels]
+        result = {
+            "design": "fixed-seed forward-only stock-env scar activation reachability",
+            "results": rows,
+            "runs": len(rows),
+            "runs_with_scar_activation": sum(row["scar_increment_events"] > 0 for row in rows),
+            "limitations": "Does not train the policy or measure scar memory's effect on learning",
+        }
+    else:
+        result = probe(args.seed, args.episodes, args.level)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n")
