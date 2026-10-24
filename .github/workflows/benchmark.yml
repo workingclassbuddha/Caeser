@@ -19,11 +19,13 @@ jobs:
       - name: Install benchmark dependencies
         run: python -m pip install -e . pytest
       - name: Check benchmark and observer tests
-        run: python -m pytest -q tests/test_benchmark.py tests/test_observer.py tests/test_scar_probe.py
+        run: python -m pytest -q tests/test_benchmark.py tests/test_observer.py tests/test_scar_probe.py tests/test_trained_scar_probe.py
       - name: Probe stock scar activation
         run: python -m caesar.scar_probe --seed 42 --episodes 3 --level 0
       - name: Scan stock activation across 5 seeds and 2 difficulty levels
         run: python -m caesar.scar_probe --scan --episodes 1 --output outputs/scar_activation_scan.json
+      - name: Run seeded stock environment training activation probe
+        run: python -m caesar.trained_scar_probe --seed 42 --episodes 5 --level 0
       - name: Upload reproducible probe logs
         uses: actions/upload-artifact@v4
         with:
@@ -31,3 +33,4 @@ jobs:
           path: |
             outputs/scar_trigger_probe.json
             outputs/scar_activation_scan.json
+            outputs/trained_scar_probe.json
