@@ -57,6 +57,28 @@ Run the comparative condition harness:
 python -m caesar.experiments --episodes 3000 --output outputs/caesar_condition_results.json
 ```
 
+## Controlled scar ablation
+
+For a paired-seed comparison of the existing recurrent policy with its scar
+increment disabled:
+
+```bash
+python -m caesar.benchmark --seeds 11 23 47 89 101 --episodes 3000 --device cpu
+python -m pytest -q tests/test_benchmark.py
+```
+
+Results and per-condition logs are written to `outputs/paired_scar_ablation.json`.
+Both conditions use the same initial Torch/NumPy seed and the same seeded
+environment RNG. The original comparison runner also now uses matched seeds
+between conditions; earlier condition-specific seed comparisons should not be
+treated as controlled ablations.
+
+Primary observations are task success and level progression, not the internal
+mirror score. If `baseline_any_scar` is false, these runs **cannot test**
+whether scar memory changes learning. Results should be repeated across seeds
+and independent environments before making general claims. This is not a
+consciousness test or a clinical/therapeutic assessment.
+
 ## Notes on the Model
 
 - The repo now describes the method honestly as a recurrent actor-critic prototype rather than PPO.
