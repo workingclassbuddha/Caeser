@@ -24,3 +24,18 @@ training path can run and collect a few real measurements.
 sampled episodes, not proof of impossibility. A positive result is evidence of
 activation, *not evidence of improved learning*. Only then is a paired
 scar/no-scar ablation with held-out outcomes informative.
+
+## Repeated training-reachability scan
+
+The CI also runs a preselected 3-seed, 20-episode level-0 scan:
+
+```bash
+python -m caesar.trained_scar_probe --seeds 11 23 47 --episodes 20 \
+  --level 0 --output outputs/trained_scar_scan.json
+```
+
+The expanded sample evaluates **whether scar activates during training**
+rather than assuming that a paired ablation is meaningful. A positive finding
+would justify a subsequent pre-registered paired learning study with held-out
+environments; a zero finding means the current stock setup lacks demonstrated
+scar-memory exposure, not that activation is impossible under all conditions.
