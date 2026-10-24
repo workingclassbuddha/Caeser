@@ -26,6 +26,8 @@ jobs:
         run: python -m caesar.scar_probe --scan --episodes 1 --output outputs/scar_activation_scan.json
       - name: Run seeded stock environment training activation probe
         run: python -m caesar.trained_scar_probe --seed 42 --episodes 5 --level 0
+      - name: Run three-seed training reachability scan (no theory claim)
+        run: python -m caesar.trained_scar_probe --seeds 11 23 47 --episodes 20 --level 0 --output outputs/trained_scar_scan.json
       - name: Upload reproducible probe logs
         uses: actions/upload-artifact@v4
         with:
@@ -34,3 +36,4 @@ jobs:
             outputs/scar_trigger_probe.json
             outputs/scar_activation_scan.json
             outputs/trained_scar_probe.json
+            outputs/trained_scar_scan.json
