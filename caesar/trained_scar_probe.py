@@ -85,21 +85,49 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--episodes", type=int, default=5)
     parser.add_argument("--level", type=int, default=0)
+    parser.add_argument("--seeds", nargs="+", type=int, default=None,
+                        help="Preselect matched training seeds; one run per seed")
     parser.add_argument("--output", default="outputs/trained_scar_probe.json")
     args = parser.parse_args()
-    result = trained_probe(seed=args.seed, episodes=args.episodes, level=args.level)
+    if args.seeds is not None:
+        if not args.seeds or len(set(args.seeds)) != len(args.seeds):
+            parser.error("--seeds requires distinct seed values")
+        runs = [trained_probe(seed=value, episodes=args.episodes, level=args.level)
+                for value in args.seeds]
+        result = {
+            "design": "repeated independent seeded actor-critic training activation probes",
+            "seeds": args.seeds,
+            "episodes_per_seed": args.episodes,
+            "level": args.level,
+            "runs": runs,
+            "runs_with_scar_events": sum(r["total_scar_events_estimate"] > 0 for r in runs),
+            "total_training_steps": sum(r["total_steps"] for r in runs),
+            "total_scar_events_estimate": sum(r["total_scar_events_estimate"] for r in runs),
+            "limit": "No paired outcome comparison or conclusion beyond observed training reachability.",
+        }
+    else:
+        result = trained_probe(seed=args.seed, episodes=args.episodes, level=args.level)
     destination = Path(args.output)
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(result, indent=2) + "\n")
-    print(json.dumps({
-        "seed": result["seed"],
-        "episodes": result["episodes"],
-        "level": result["level"],
-        "total_steps": result["total_steps"],
-        "total_scar_events_estimate": result["total_scar_events_estimate"],
-        "episodes_with_scar": result["episodes_with_scar"],
-        "final_scar": result["final_scar"],
-    }, indent=2))
+    if args.seeds is not None:
+        print(json.dumps({
+            "seeds": result["seeds"],
+            "episodes_per_seed": result["episodes_per_seed"],
+            "total_training_steps": result["total_training_steps"],
+            "runs_with_scar_events": result["runs_with_scar_events"],
+            "total_scar_events_estimate": result["total_scar_events_estimate"],
+        }, indent=2))
+    else:
+        print(json.dumps({
+            "seed": result["seed"],
+            "episodes": result["episodes"],
+            "level": result["level"],
+            "total_steps": result["total_steps"],
+            "total_scar_events_estimate": result["total_scar_events_estimate"],
+            "episodes_with_scar": result["episodes_with_scar"],
+            "final_scar": result["final_scar"],
+        }, indent=2))
     return 0
 
 
