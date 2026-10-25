@@ -47,6 +47,7 @@ def test_frozen_bit_policy_uses_first_observation_not_gap_ground_truth():
     obs = np.zeros(14, dtype=np.float32)
     obs[7], obs[13] = 0.20, 0.08
     obs[6] = 0.3
+    obs[8] = 0.3  # room remains toward the north
     scanner.action(obs)
     assert scanner.preferred_side == "top"
     obs[7], obs[13], obs[6] = 0.0, 1.0, 0.02
