@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
@@ -17,7 +16,7 @@ from .baselines import controller_action
 from .challenge_benchmark import EVAL_SEED_OFFSET
 from .challenge_env import BarrierEnv, CHALLENGE_ARMS, challenge_config
 from .core import CAESARNet
-from .reactive_control import WallScanner
+from .reactive_control import WallScanner, StoredRayBitScanner
 from .training import (
     TrainingConfig, apply_actor_critic_update, compute_noise_scale,
     run_training_episode, set_seed,
@@ -27,24 +26,6 @@ TEST_OFFSET = 44_000_000
 IDENTICAL_OBS_TOL = 1e-6
 DIRECTION_TOL = 0.02
 CONTROLLERS = ("default_up", "stored_ray_bit")
-
-
-@dataclass
-class StoredRayBitScanner(WallScanner):
-    """One bit captured at spawn; all later decisions use the same sensors.
-
-    Fixed physics-derived cue: north-east ray (index 7) vs south-east
-    ray (index 13). Never accesses hidden gap position or label.
-    """
-    preferred_side: str | None = None
-
-    def action(self, obs: np.ndarray) -> np.ndarray:
-        if self.preferred_side is None:
-            self.preferred_side = "top" if float(obs[7]) >= float(obs[13]) else "bottom"
-        if self.phase == "approach" and float(obs[6]) < 0.065:
-            if self.preferred_side == "bottom":
-                self.phase = "search_down"
-        return super().action(obs)
 
 
 def paired_histories(seed: int, trial: int, arm: str = "none") -> dict:
