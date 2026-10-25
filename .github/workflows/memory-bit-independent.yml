@@ -1,0 +1,31 @@
+name: CAESAR one-bit memory independent holdout
+
+on:
+  pull_request:
+
+jobs:
+  frozen-one-bit-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR and test runner
+        run: python -m pip install -e . pytest
+      - name: Test frozen rule, comparability and reproducibility
+        run: python -m pytest -q tests/test_memory_bit_validation.py
+      - name: Independent previously unused seeds and paired held-out trials
+        run: |
+          python -m caesar.memory_bit_validation \
+            --seeds 89 101 211 --trials 16 --pairs 30 \
+            --output outputs/one_bit_independent_validation.json
+      - name: Archive all controller trajectories and matched cue decisions
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-one-bit-memory-independent-holdout
+          path: outputs/one_bit_independent_validation.json
+          if-no-files-found: error
