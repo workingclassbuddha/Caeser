@@ -17,7 +17,7 @@ jobs:
       - name: Install CAESAR and pytest
         run: python -m pip install -e . pytest
       - name: Test controllers and evaluation matching
-        run: python -m pytest -q tests/test_baselines.py
+        run: python -m pytest -q tests/test_baselines.py tests/test_control_comparison.py
       - name: Evaluate direct matched five-trial controls
         run: |
           python -m caesar.baselines --seeds 11 23 47 --trials 5 \
