@@ -51,12 +51,14 @@ def test_audit_trials_match_existing_evaluation_success_and_episode_length(contr
     ]
 
 
-def test_oracle_can_make_temporary_distance_increasing_actions():
-    # This is an observed physical property, not a claim of learning.
+def test_oracle_route_can_sacrifice_one_step_distance_reduction():
+    # A proper one-step counterfactual, not a claim about learned reasoning.
     sample = [trial_rollout(11, "none", i, "oracle_route") for i in range(4)]
     assert all(x["success"] for x in sample)
-    assert any(x["distance_increase_steps"] > 0 for x in sample)
-    assert any(x["max_distance_excess"] > 0 for x in sample)
+    assert any(x["one_step_direct_better_count"] > 0 for x in sample)
+    assert any(x["sum_one_step_distance_sacrifice"] > 0 for x in sample)
+    direct = trial_rollout(11, "none", 0, "direct")
+    assert direct["one_step_direct_better_count"] == 0
 
 
 def test_audit_reports_all_controllers_without_training():
