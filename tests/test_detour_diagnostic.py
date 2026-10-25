@@ -71,6 +71,18 @@ def test_audit_reports_all_controllers_without_training():
     assert result == run_audit([11], 2, ["none", "space+time+energy"])
 
 
+def test_same_frozen_scanner_is_used_inside_training_benchmark():
+    rows = [trial_rollout(11, "none", i, "wall_scanner") for i in range(4)]
+    expected = evaluate(11, "none", 4, controller="wall_scanner")
+    assert [row["success"] for row in rows] == [
+        row["success"] for row in expected["trials_log"]
+    ]
+    assert [row["steps"] for row in rows] == [
+        row["steps"] for row in expected["trials_log"]
+    ]
+    assert sum(row["success"] for row in rows) == 4
+
+
 def test_rejects_unsupported_protocol_inputs():
     with pytest.raises(ValueError):
         run_audit([11, 11], 1, ["none"])
