@@ -38,6 +38,7 @@ def pair(seed: int, trial: int, arm: str = "none") -> dict:
     if not np.array_equal(top.goal_pos, bottom.goal_pos):
         raise AssertionError("paired goals not equal")
 
+    original_start = top.agent_pos.copy()
     observations = [(top_obs, bottom_obs, "spawn", 0)]
     # Goal-directed approach only until the east ray is close to the wall;
     # paired physical motion is identical because the goal bearing and
@@ -73,7 +74,8 @@ def pair(seed: int, trial: int, arm: str = "none") -> dict:
 
     return {
         "seed": seed, "trial": trial, "arm": arm,
-        "initial_position": [float(x) for x in top.agent_pos],
+        "initial_position": [float(x) for x in original_start],
+        "near_wall_position": [float(x) for x in top.agent_pos],
         "target": [float(x) for x in top.goal_pos],
         "observations": [
             extract(top_o, bottom_o, stage, steps)
