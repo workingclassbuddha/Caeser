@@ -30,7 +30,7 @@ def test_factorial_tightening_changes_only_declared_constraints():
 @pytest.mark.parametrize("gap", ["top", "bottom"])
 def test_wall_blocks_crossing_outside_gap_without_teleporting(gap):
     env = BarrierEnv(rng=np.random.default_rng(17), fixed_gap_side=gap)
-    env.agent_pos = np.array([env.wall_x - 0.04, 2.50], dtype=np.float32)
+    env.agent_pos = np.array([env.wall_x - 0.02, 2.50], dtype=np.float32)
     env.velocity[:] = 0
     obs_before = env._get_obs()
     # Ray aimed directly right senses the barrier rather than outer wall.
