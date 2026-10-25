@@ -49,3 +49,22 @@ class WallScanner:
             desired = goal_direction.astype(np.float32)
         return np.clip(desired - velocity, -1, 1).astype(np.float32)
 
+
+
+@dataclass
+class StoredRayBitScanner(WallScanner):
+    """One bit captured at spawn; all later decisions use the same sensors.
+
+    Fixed physics-derived cue: north-east ray (index 7) vs south-east
+    ray (index 13). Never accesses hidden gap position or label.
+    """
+    preferred_side: str | None = None
+
+    def action(self, obs: np.ndarray) -> np.ndarray:
+        if self.preferred_side is None:
+            self.preferred_side = "top" if float(obs[7]) >= float(obs[13]) else "bottom"
+        if self.phase == "approach" and float(obs[6]) < 0.065:
+            if self.preferred_side == "bottom":
+                self.phase = "search_down"
+        return super().action(obs)
+
