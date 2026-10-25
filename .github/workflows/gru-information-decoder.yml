@@ -1,0 +1,32 @@
+name: CAESAR GRU information decoding audit
+
+on:
+  pull_request:
+
+jobs:
+  frozen-hidden-linear-decoder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR and tests
+        run: python -m pip install -e . pytest
+      - name: Test pair isolation, hidden reset, and linear classifier controls
+        run: python -m pytest -q tests/test_gru_information_decoder.py
+      - name: Probe held-out gap information before and after unchanged RL training
+        run: |
+          python -m caesar.gru_information_decoder \
+            --policy-seeds 11 23 --train-episodes 50 \
+            --train-trials 24 --test-trials 24 \
+            --output outputs/gru_information_pilot.json
+      - name: Archive complete decoder examples and predictions
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-gru-hidden-gap-decoding-pilot
+          path: outputs/gru_information_pilot.json
+          if-no-files-found: error
