@@ -67,6 +67,13 @@ def test_one_bit_and_default_share_test_cases_and_report_full_log():
     assert [x["success"] for x in default["trial_log"]] == [
         x["success"] for x in expected["trials_log"]
     ]
+    stored_expected = evaluate(11, "none", 3, controller="stored_ray_bit")
+    assert [x["success"] for x in sample["trial_log"]] == [
+        x["success"] for x in stored_expected["trials_log"]
+    ]
+    assert [x["steps"] for x in sample["trial_log"]] == [
+        x["steps"] for x in stored_expected["trials_log"]
+    ]
 
 
 def test_end_to_end_probe_reports_per_pair_causal_controls():
