@@ -7,6 +7,7 @@ and fixed thresholds specified before evaluating results.
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -89,6 +90,9 @@ def trial_rollout(seed: int, arm: str, trial: int, control: str) -> dict:
     first_away_reward = None
     last_distance = initial_dist
     first_crossing_step = None
+    one_step_direct_better_count = 0
+    sum_one_step_distance_sacrifice = 0.0
+    max_one_step_distance_sacrifice = 0.0
     while not done:
         old_x = float(env.agent_pos[0])
         if control == "oracle_route":
@@ -97,7 +101,22 @@ def trial_rollout(seed: int, arm: str, trial: int, control: str) -> dict:
             action = automaton.action(obs)
         else:
             action = controller_action(obs, "direct")
+        # One-step counterfactual: *same* position, battery, velocity and
+        # obstacle, but choose immediate goal pointing instead. This does not
+        # change the actual trajectory or the learner. Compare next-step
+        # Euclidean goal distance; no oracle guidance is given to any policy.
+        alternative = copy.deepcopy(env)
+        _, _, _, alternative_info = alternative.step(
+            controller_action(obs, "direct")
+        )
         obs, reward, done, info = env.step(action)
+        distance_sacrifice = float(info["distance"]) - float(alternative_info["distance"])
+        if distance_sacrifice > 1e-5:
+            one_step_direct_better_count += 1
+            sum_one_step_distance_sacrifice += distance_sacrifice
+            max_one_step_distance_sacrifice = max(
+                max_one_step_distance_sacrifice, distance_sacrifice
+            )
         total_reward += reward
         discounted_reward += discount * reward
         discount *= 0.98
@@ -127,6 +146,9 @@ def trial_rollout(seed: int, arm: str, trial: int, control: str) -> dict:
         "first_away_step": first_away_step,
         "first_away_reward": first_away_reward,
         "max_distance_excess": float(max_distance - initial_dist),
+        "one_step_direct_better_count": one_step_direct_better_count,
+        "sum_one_step_distance_sacrifice": float(sum_one_step_distance_sacrifice),
+        "max_one_step_distance_sacrifice": float(max_one_step_distance_sacrifice),
         "scanner_phase_counts": automaton.phase_counts if control == "wall_scanner" else None,
     }
 
@@ -156,6 +178,12 @@ def run_audit(seeds: list[int], trials: int, arms: list[str]) -> dict:
             ])),
             "mean_max_distance_excess": float(np.mean([
                 row["max_distance_excess"] for row in target
+            ])),
+            "mean_one_step_direct_better_count": float(np.mean([
+                row["one_step_direct_better_count"] for row in target
+            ])),
+            "mean_sum_one_step_distance_sacrifice": float(np.mean([
+                row["sum_one_step_distance_sacrifice"] for row in target
             ])),
             "mean_discounted_return": float(np.mean([
                 row["discounted_return_0_98"] for row in target
@@ -189,8 +217,8 @@ def run_audit(seeds: list[int], trials: int, arms: list[str]) -> dict:
             ),
         },
         "interpretation_limit": (
-            "A longer route may temporarily INCREASE Euclidean goal distance, "
-            "but this by itself does not establish the reason CAESAR fails. "
+            "The detour may temporarily sacrifice immediate distance reduction "
+            "relative to direct pointing; this does not establish why CAESAR fails. "
             "The shaped reward penalizes all time steps in proportion to distance; "
             "success reward may outweigh the interim negative return. "
             "No learner was trained in this audit."
