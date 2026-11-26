@@ -1,0 +1,40 @@
+name: Space-Time-Energy transfer pilot
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  factorial-and-curriculum-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install project and test runner
+        run: python -m pip install -e . pytest
+      - name: Validate intervention isolation and held-out evaluation
+        run: python -m pytest -q tests/test_constraint_transfer.py tests/test_longrun_replay.py
+      - name: Pilot eight-arm factorial and held-out transfer
+        run: |
+          python -m caesar.constraint_transfer \
+            --seeds 11 --episodes 20 --eval-trials 3 \
+            --output outputs/constraint_transfer_pilot.json
+      - name: Pilot corrected historical-style curriculum
+        run: |
+          python -m caesar.longrun_replay \
+            --seeds 11 --episodes 120 \
+            --output outputs/curriculum_replay_pilot.json
+      - name: Retain complete pilot logs and results
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-constraint-factorial-and-curriculum-pilot
+          path: |
+            outputs/constraint_transfer_pilot.json
+            outputs/curriculum_replay_pilot.json
+            outputs/curriculum_seed_11.json
+          if-no-files-found: error

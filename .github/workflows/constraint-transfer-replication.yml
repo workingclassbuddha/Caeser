@@ -1,0 +1,39 @@
+name: Constraint transfer three-seed reproducibility check
+
+on:
+  pull_request:
+
+jobs:
+  multi-seed-reproducibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install project
+        run: python -m pip install -e .
+      - name: Multi-seed eight-arm transfer diagnostic
+        run: |
+          python -m caesar.constraint_transfer \
+            --seeds 11 23 47 --episodes 40 --eval-trials 5 \
+            --output outputs/constraint_transfer_three_seed_diagnostic.json
+      - name: Three-seed corrected curriculum progress diagnostic
+        run: |
+          python -m caesar.longrun_replay \
+            --seeds 11 23 47 --episodes 200 \
+            --output outputs/curriculum_three_seed_diagnostic.json
+      - name: Upload complete outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-three-seed-constraint-learning
+          path: |
+            outputs/constraint_transfer_three_seed_diagnostic.json
+            outputs/curriculum_three_seed_diagnostic.json
+            outputs/curriculum_seed_11.json
+            outputs/curriculum_seed_23.json
+            outputs/curriculum_seed_47.json
+          if-no-files-found: error
