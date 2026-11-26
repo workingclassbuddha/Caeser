@@ -186,7 +186,7 @@ def train_caesar(
     device = resolve_device(config.device)
     set_seed(config.seed)
 
-    env = EmbodiedEnv(level=0, config=env_config)
+    env = EmbodiedEnv(level=0, config=env_config, rng=np.random.default_rng(config.seed))
     agent = CAESARNet(model_config=model_config).to(device)
     optimizer = torch.optim.Adam(agent.parameters(), lr=config.learning_rate)
     success_window: deque[int] = deque(maxlen=config.success_window_size)

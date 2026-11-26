@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from .core import CAESARNet, EmbodiedEnv
+from .core import CAESARNet, EmbodiedEnv, ModelConfig
 from .training import (
     TrainingConfig,
     apply_actor_critic_update,
@@ -27,6 +27,7 @@ class ExperimentCondition:
     name: str
     description: str
     scar_decay_per_episode: float = 0.0
+    disable_scar: bool = False
     log: list[dict[str, float | int]] = field(default_factory=list)
 
     def should_demote(
@@ -65,6 +66,17 @@ class ExperimentCondition:
                 "level": level,
                 "time_at_level": time_at_level,
             }
+        )
+
+
+class NoScarCondition(ExperimentCondition):
+    """Ablation: the same recurrent network without incremental scar updates."""
+
+    def __init__(self) -> None:
+        super().__init__(
+            name="NO_SCAR",
+            description="No scar accumulation, with the same recurrent policy and training objective.",
+            disable_scar=True,
         )
 
 
@@ -157,6 +169,7 @@ def default_conditions() -> list[ExperimentCondition]:
             name="BASELINE",
             description="Original v12.10 dynamics with persistent scar and no demotion.",
         ),
+        NoScarCondition(),
         AdaptiveDemotionCondition(),
         ScarDecayCondition(),
         HealingDemotionCondition(),
@@ -175,8 +188,9 @@ def train_condition(
     device = resolve_device(device_name)
     training_config = TrainingConfig(episodes=max_episodes, seed=seed, device=str(device), log_every=log_every)
 
-    env = EmbodiedEnv(level=0)
-    agent = CAESARNet().to(device)
+    env = EmbodiedEnv(level=0, rng=np.random.default_rng(seed))
+    model_config = ModelConfig(scar_increment=0.0) if condition.disable_scar else None
+    agent = CAESARNet(model_config=model_config).to(device)
     optimizer = torch.optim.Adam(agent.parameters(), lr=training_config.learning_rate)
 
     success_window: deque[int] = deque(maxlen=training_config.success_window_size)
@@ -355,7 +369,7 @@ def run_comprehensive_test(
         result = train_condition(
             condition=condition,
             max_episodes=episodes,
-            seed=seed + index - 1,
+            seed=seed,
             device_name=device_name,
         )
         results.append(result)
