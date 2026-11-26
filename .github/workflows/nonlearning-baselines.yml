@@ -1,0 +1,36 @@
+name: Nonlearning goal-controller controls
+
+on:
+  pull_request:
+
+jobs:
+  goal-baseline-evaluation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR and pytest
+        run: python -m pip install -e . pytest
+      - name: Test controllers and evaluation matching
+        run: python -m pytest -q tests/test_baselines.py tests/test_control_comparison.py
+      - name: Evaluate direct matched five-trial controls
+        run: |
+          python -m caesar.baselines --seeds 11 23 47 --trials 5 \
+            --output outputs/controller_baselines_matched5.json
+      - name: Evaluate expanded thirty-trial controls
+        run: |
+          python -m caesar.baselines --seeds 11 23 47 --trials 30 \
+            --output outputs/controller_baselines_30.json
+      - name: Archive raw control outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-nonlearning-controller-baselines
+          path: |
+            outputs/controller_baselines_matched5.json
+            outputs/controller_baselines_30.json
+          if-no-files-found: error

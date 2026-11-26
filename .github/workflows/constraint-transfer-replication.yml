@@ -21,6 +21,16 @@ jobs:
           python -m caesar.constraint_transfer \
             --seeds 11 23 47 --episodes 40 --eval-trials 5 \
             --output outputs/constraint_transfer_three_seed_diagnostic.json
+      - name: Evaluate exact same held-out trials with no-learning controllers
+        run: |
+          python -m caesar.baselines --seeds 11 23 47 --trials 5 \
+            --output outputs/controller_baselines_replication_matched5.json
+      - name: Report paired CAESAR-vs-no-learning outcomes
+        run: |
+          python -m caesar.control_comparison \
+            --learned outputs/constraint_transfer_three_seed_diagnostic.json \
+            --controls outputs/controller_baselines_replication_matched5.json \
+            --output outputs/learned_vs_controllers_replication.json
       - name: Three-seed corrected curriculum progress diagnostic
         run: |
           python -m caesar.longrun_replay \
@@ -32,6 +42,8 @@ jobs:
           name: caesar-three-seed-constraint-learning
           path: |
             outputs/constraint_transfer_three_seed_diagnostic.json
+            outputs/controller_baselines_replication_matched5.json
+            outputs/learned_vs_controllers_replication.json
             outputs/curriculum_three_seed_diagnostic.json
             outputs/curriculum_seed_11.json
             outputs/curriculum_seed_23.json
