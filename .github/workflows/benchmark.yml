@@ -19,7 +19,7 @@ jobs:
       - name: Install benchmark dependencies
         run: python -m pip install -e . pytest
       - name: Check benchmark and observer tests
-        run: python -m pytest -q tests/test_benchmark.py tests/test_observer.py tests/test_scar_probe.py tests/test_trained_scar_probe.py tests/test_scar_horizon.py
+        run: python -m pytest -q tests/test_benchmark.py tests/test_observer.py tests/test_scar_probe.py tests/test_trained_scar_probe.py tests/test_scar_horizon.py tests/test_scar_causal_path.py
       - name: Probe stock scar activation
         run: python -m caesar.scar_probe --seed 42 --episodes 3 --level 0
       - name: Scan stock activation across 5 seeds and 2 difficulty levels
