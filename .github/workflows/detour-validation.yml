@@ -1,0 +1,29 @@
+name: CAESAR wall-scanner independent validation
+
+on:
+  pull_request:
+
+jobs:
+  validation-on-untouched-seeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR
+        run: python -m pip install -e .
+      - name: Validate frozen wall scanner on unseen seeds
+        run: |
+          python -m caesar.detour_diagnostic \
+            --seeds 89 101 211 --trials 12 \
+            --output outputs/detour_scanner_independent_validation.json
+      - name: Preserve independent raw trials
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-frozen-wall-scanner-new-seeds
+          path: outputs/detour_scanner_independent_validation.json
+          if-no-files-found: error

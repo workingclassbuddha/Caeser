@@ -1,0 +1,31 @@
+name: CAESAR v2 detour incentive audit
+
+on:
+  pull_request:
+
+jobs:
+  one-step-counterfactual-and-reactive-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR and pytest
+        run: python -m pip install -e . pytest
+      - name: Check policy observation-only input and same-state trial matching
+        run: python -m pytest -q tests/test_detour_diagnostic.py
+      - name: Audit stepwise opportunity cost and nonlearning wall scanner
+        run: |
+          python -m caesar.detour_diagnostic \
+            --seeds 11 23 47 --trials 4 \
+            --output outputs/detour_cost_pilot.json
+      - name: Retain full per-step diagnostic summaries and per-trial outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-detour-incentive-and-wall-scanner
+          path: outputs/detour_cost_pilot.json
+          if-no-files-found: error
