@@ -14,7 +14,7 @@ import numpy as np
 import torch
 
 from .baselines import controller_action
-from .reactive_control import WallScanner
+from .reactive_control import WallScanner, StoredRayBitScanner
 from .challenge_env import BarrierEnv, CHALLENGE_ARMS, challenge_config
 from .core import CAESARNet
 from .training import (
@@ -22,7 +22,7 @@ from .training import (
     run_training_episode, set_seed,
 )
 
-CONTROLS = ("direct", "velocity_compensated", "stationary", "wall_scanner", "oracle_route")
+CONTROLS = ("direct", "velocity_compensated", "stationary", "wall_scanner", "stored_ray_bit", "oracle_route")
 EVAL_SEED_OFFSET = 9_000_000
 
 
@@ -69,7 +69,8 @@ def evaluate(
                     agent.M_state.copy_(saved[1])
                 hidden = torch.zeros(1, 1, agent.hidden_size) if agent is not None else None
                 stage = 0
-                scanner = WallScanner() if controller == "wall_scanner" else None
+                scanner = (WallScanner() if controller == "wall_scanner" else
+                           StoredRayBitScanner() if controller == "stored_ray_bit" else None)
                 done = False
                 total_reward = 0.0
                 while not done:
@@ -79,7 +80,7 @@ def evaluate(
                         action = out.reshape(-1).cpu().numpy()
                     elif controller == "oracle_route":
                         action, stage = oracle_action(env, stage)
-                    elif controller == "wall_scanner":
+                    elif controller in ("wall_scanner", "stored_ray_bit"):
                         assert scanner is not None
                         action = scanner.action(observation)
                     else:
