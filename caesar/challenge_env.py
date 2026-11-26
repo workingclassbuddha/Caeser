@@ -49,10 +49,14 @@ class BarrierEnv(EmbodiedEnv):
     def __init__(
         self, level: int = 0, config: EnvConfig | None = None,
         rng: np.random.Generator | None = None, fixed_gap_side: str | None = None,
+        gap_half_width: float = GAP_HALF_WIDTH,
     ) -> None:
         if fixed_gap_side not in (None, "bottom", "top"):
             raise ValueError("gap must be bottom, top, or random")
+        if not GAP_HALF_WIDTH <= gap_half_width <= 2.1:
+            raise ValueError("gap_half_width must lie between hard-gap width and 2.1")
         self.fixed_gap_side = fixed_gap_side
+        self.gap_half_width = float(gap_half_width)
         super().__init__(level=level, config=config or challenge_config(), rng=rng)
 
     def reset(self) -> np.ndarray:
@@ -77,7 +81,7 @@ class BarrierEnv(EmbodiedEnv):
                                 [self.size - 0.60, 2.75]).astype(np.float32)
 
     def _gap_open(self, crossing_y: float) -> bool:
-        return abs(crossing_y - self.gap_center) <= GAP_HALF_WIDTH
+        return abs(crossing_y - self.gap_center) <= self.gap_half_width
 
     def _get_obs(self) -> np.ndarray:
         obs = super()._get_obs()
