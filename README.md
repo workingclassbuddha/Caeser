@@ -13,6 +13,19 @@ CAESAR is a constraint-dynamics-inspired toy environment and recurrent actor-cri
 - energetic cost through battery depletion (`Theta`)
 - persistent scar as intentional hysteresis, not incidental noise
 
+## Current research findings
+
+The October 2026 research series separates evidence of learning from the explanatory power of fixed controllers and recurrent representations.
+
+| Experiment | Observed result |
+| --- | --- |
+| [Original goal-following arena](docs/nonlearning-goal-baselines.md) | Fixed goal-following controls reveal that successful navigation alone is not evidence of learning. |
+| [Barrier-world observability](docs/gap-observability.md) | A fixed observation-only wall scanner succeeded on 212/288 unseen routes. |
+| [Matched recurrent-history intervention](docs/causal-recurrent-history.md) | The trained policy did not choose both correct opposite directions in any of 22 matched pairs. |
+| [One-bit memory and GRU decoding](docs/gru-information-decoding.md) | A frozen, hand-written one-bit controller succeeded on 364/384 routes; recurrent information retention and learned action selection are separate questions. |
+
+**Research status:** The existing experiments do not establish a learned navigation advantage, general intelligence or consciousness. The next investigation concerns [actor credit assignment and the use of decodable memory](https://github.com/workingclassbuddha/Caeser/issues/17).
+
 ## Project Layout
 
 ```text
