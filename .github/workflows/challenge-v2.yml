@@ -1,0 +1,31 @@
+name: CAESAR v2 barrier challenge feasibility
+
+on:
+  pull_request:
+
+jobs:
+  challenge-feasibility-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install dependencies
+        run: python -m pip install -e . pytest
+      - name: Test obstacle collisions, sensors, feasibility and unchanged training path
+        run: python -m pytest -q tests/test_challenge_env.py
+      - name: Run all eight v2 training constraint arms and paired observation-only controls
+        run: |
+          python -m caesar.challenge_benchmark \
+            --seeds 11 --episodes 12 --trials 3 \
+            --output outputs/challenge_v2_pilot.json
+      - name: Preserve per-episode training and held-out results
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-barrier-challenge-pilot
+          path: outputs/challenge_v2_pilot.json
+          if-no-files-found: error

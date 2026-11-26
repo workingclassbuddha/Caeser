@@ -1,0 +1,30 @@
+name: CAESAR v2 early learning diagnostic
+
+on:
+  pull_request:
+
+jobs:
+  unchanged-learner-extended-exposure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR
+        run: python -m pip install -e .
+      - name: Train unchanged recurrent CAESAR on v2 barrier world
+        run: |
+          python -m caesar.challenge_benchmark \
+            --seeds 11 23 47 --episodes 150 --trials 8 \
+            --train-arms none \
+            --output outputs/challenge_v2_3seed_150ep.json
+      - name: Upload complete trajectories and held-out measurements
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-three-seed-150-episode-learning
+          path: outputs/challenge_v2_3seed_150ep.json
+          if-no-files-found: error
