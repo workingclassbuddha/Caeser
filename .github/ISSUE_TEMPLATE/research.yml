@@ -1,0 +1,30 @@
+name: Research proposal or replication
+description: Propose a controlled experiment or report a reproducible finding.
+title: "[Research]: "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question and hypothesis
+      description: State the question and what result would count against the hypothesis.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and controls
+      description: Specify version, seeds, training and holdout design, comparator, endpoint and stopping criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations
+      description: Link raw outputs, exact commands, commit and environment if results already exist.
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Research boundaries
+      options:
+        - label: I distinguish proposed experiments, measured results and independently replicated findings.
+          required: true

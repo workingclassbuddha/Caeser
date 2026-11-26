@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the repository and the specific commit or archived version used."
+title: "CAESAR: Constraint-Aware Embodied Scarred Agent for Reality"
+authors:
+  - family-names: Cator
+    given-names: Matthew A.
+type: software
+license: MIT
+repository-code: "https://github.com/workingclassbuddha/Caeser"
+abstract: "Experimental recurrent actor-critic codebase for testing embodied learning under spatial, temporal and energetic constraints, including fixed-controller baselines and recurrent-memory diagnostics."
+keywords:
+  - reinforcement learning
+  - embodied learning
+  - recurrent networks
+  - reproducible research
