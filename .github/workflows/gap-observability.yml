@@ -1,0 +1,31 @@
+name: CAESAR v2 gap-side observability audit
+
+on:
+  pull_request:
+
+jobs:
+  sensor-information-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CAESAR and tests
+        run: python -m pip install -e . pytest
+      - name: Validate matched-world geometric identity and only ray differences
+        run: python -m pytest -q tests/test_gap_observability.py
+      - name: Quantify spawn and near-wall gap information without learning
+        run: |
+          python -m caesar.gap_observability \
+            --seeds 89 101 211 --trials 50 \
+            --output outputs/gap_observability.json
+      - name: Upload paired-world and per-ray results
+        uses: actions/upload-artifact@v4
+        with:
+          name: caesar-v2-gap-side-observability
+          path: outputs/gap_observability.json
+          if-no-files-found: error
